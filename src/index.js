@@ -73,7 +73,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["no money", "no clothes", "no tv", "no car", "no home", "have home"]
+    omni: ["wasteTime", "no clothes", "no tv", "no car"]
   },
   {
     question: "Что именно вам не нравится в камере?",
@@ -93,7 +93,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["manager, senior manager, director", "office worker", "freelancer, project work", "Service sector employee", "government worker", "individual entrepreneur", "student", "housewife", "pensioner", "unemployed"]
+    omni: []
   },
   {
     question: "Что именно вам не нравится в батарее телефона?",
@@ -107,7 +107,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["office", "combined", "remote", "another"]
+    omni: []
   },
   {
     question:
@@ -123,7 +123,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["sport", "social", "family", "work", "culture"]
+    omni: []
   },
   {
     question:
@@ -140,7 +140,7 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["tv", "pc", "smartphone", "fridge", "dryer", "air conditioner", "air purifier", "steam oven", "tablet", "smart watch", "dishwasher", "microwave", "vacuum cleaner", "robot vacuum cleaner", "headphones", "soundbar", "smart speaker", "console", "other"]
+    omni: []
   },
   {
     question:
@@ -160,7 +160,7 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["tv", "pc", "smartphone", "fridge", "dryer", "air conditioner", "air purifier", "steam oven", "tablet", "smart watch", "dishwasher", "microwave", "vacuum cleaner", "robot vacuum cleaner", "headphones", "soundbar", "smart speaker", "console", "other"]
+    omni: []
   },
   {
     question:
@@ -200,7 +200,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["absolutelynotsatisfied", "ratherdissatisfied", "partlysatisfiedpartlynot", "rathersatisfied", "competelysatisfied"]
+    omni: []
   },
   {
     question: "Что вам хотелось бы улучшить в этом смартфоне?",
@@ -218,7 +218,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["didn'tfullyunderstandtheinstructions", "thefunctionworkedpartially", "complicatedlongconnection", "other"]
+    omni: []
   },
   {
     question: "Ваш возраст?",
