@@ -1,0 +1,142 @@
+@media (max-width: $mobileWidth) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:not(:first-child) {
+      margin: vw(8, $unitPxVw) 0 0;
+    }
+  }
+
+  h1 {
+    font-size: vw(30, $unitPxVw);
+  }
+
+  h2 {
+    font-size: vw(26, $unitPxVw);
+  }
+
+  h3 {
+    font-size: vw(16, $unitPxVw);
+  }
+
+  h4 {
+    font-size: vw(22, $unitPxVw);
+  }
+
+  h5 {
+    font-size: vw(14, $unitPxVw);
+  }
+
+  h6 {
+    font-size: vw(14, $unitPxVw);
+  }
+
+  p {
+    font-size: vw(14, $unitPxVw);
+    margin-top: vw(8, $unitPxVw);
+  }
+
+  ol {
+    padding-left: vw(20, $unitPxVw);
+
+    li {
+      font-size: vw(20, $unitPxVw);
+      padding-left: vw(5, $unitPxVw);
+      text-align: left;
+    }
+  }
+
+  ul {
+    margin: 0 0 vw(10, $unitPxVw);
+  }
+  .section {
+    // padding: vw(16, $unitPxVw) 0;
+
+    .col {
+      display: flex;
+      flex-flow: row wrap;
+      flex: 0 0 vw(0, $unitPxVw);
+      position: relative;
+
+      align-items: center;
+      justify-items: center;
+      justify-content: center;
+      padding: 0 vw(12, $unitPxVw);
+
+      &.col-wrapper {
+        padding: 0;
+      }
+
+      @for $i from 0 through 12 {
+        $w: $i/12;
+
+        &.col-#{$i} {
+          flex: 1 0 100%;
+          padding: 0;
+        }
+
+        &.col-2-5 {
+          flex: 0 1 50%;
+        }
+
+        &.col-3-75 {
+          flex: 1 0 100%;
+        }
+      }
+    }
+
+    .wrapper {
+      width: 100%;
+      padding: 0;
+    }
+
+    & > .wrapper {
+      margin: 0;
+    }
+
+    .col-even {
+      .input-row {
+        padding-left: 0;
+      }
+    }
+
+    .col-odd {
+      .input-row {
+        padding-right: 0;
+      }
+    }
+
+    .text-wrap {
+      padding: 0 vw(24, $unitPxVw);
+    }
+  }
+
+  .section {
+    // padding: vw(24, $unitPxVw) 0;
+
+    .wrapper {
+      .text-padded {
+        padding-left: vw(24, $unitPxVw);
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    .text-wrap {
+      margin: vw(24, $unitPxVw) 0 0;
+    }
+  }
+}

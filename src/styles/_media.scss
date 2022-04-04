@@ -1,0 +1,56 @@
+@media (max-width: $mobileWidth) {
+  $unitPxVw: 3.6;
+  .container {
+    max-width: vw(312, $unitPxVw);
+  }
+  h1 {
+    font-size: vw(30, $unitPxVw);
+  }
+
+  h2 {
+    font-size: vw(26, $unitPxVw);
+  }
+
+  h3 {
+    font-size: vw(16, $unitPxVw);
+  }
+
+  h4 {
+    font-size: vw(22, $unitPxVw);
+  }
+
+  h5 {
+    font-size: vw(14, $unitPxVw);
+  }
+
+  h6 {
+    font-size: vw(14, $unitPxVw);
+  }
+
+  .section {
+    padding-top: vw(48, $unitPxVw);
+    &-main {
+      padding-top: vw(96, $unitPxVw);
+    }
+    &-bundles {
+      &-text {
+        margin-bottom: 0;
+        margin-top: vw(16, $unitPxVw);
+      }
+      &-header {
+        margin-bottom: vw(16, $unitPxVw);
+      }
+    }
+
+
+  }
+  .show-desktop {
+    display: none !important;
+  }
+  .show-mobile {
+    display: block;
+  }
+  .sece-wrap {
+    margin-top: vw(26, $unitPxVw);
+  }
+}

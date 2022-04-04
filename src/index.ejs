@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-base.min.b2b46ed65d46ffd78b7dd408f6f1ed36.css"
+    />
+  </head>
+  <body>
+    <div class="survey" id="survey">
+      <div class="container">
+        <div class="survey-wrapper none"></div>
+      </div>
+    </div>
+    <div class="congratulations">
+      <div class="container">
+        <h2 class="congratulations-header">
+          Заполните ваши данные для участия в розыгрыше
+        </h2>
+        <p class="congratulations-subheader">
+          Вы сможете участвовать в розыгрыше призов, если пройдете опрос до
+          конца.
+        </p>
+        <form class="congratulations-form">
+          <h4 class="congratulations-form-header">Анкета участника</h4>
+          <input
+            class="congratulations-form-input"
+            required
+            id="name"
+            type="text"
+            placeholder="ФИО"
+          />
+          <div class="congratulations-inputs">
+            <input
+              class="congratulations-form-input"
+              required
+              id="phone"
+              type="tel"
+              placeholder="Телефон"
+            />
+            <input
+              class="congratulations-form-input"
+              required
+              id="email"
+              type="email"
+              placeholder="Email"
+            />
+          </div>
+          <label class="form-control congratulations-checkboxWrapper">
+            <input
+              required
+              type="checkbox"
+              data-omni-type="microsite"
+              class="congratulations-form-checkbox checkbox"
+            />
+            <div class="option congratulations-checkbox">
+              <div class="option2 congratulations-checkbox-text">
+                Я ознакомлен и согласен с
+                <a href="rules" class="congratulations-form-rules"
+                  >Правилами и условиями передачи персональных данных.</a
+                >
+              </div>
+            </div>
+          </label>
+          <button
+            class="cta cta--contained cta--black congratulations-form-btn"
+            data-omni-type="microtype"
+            data-omni="submitform"
+          >
+            Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
