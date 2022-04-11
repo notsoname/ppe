@@ -11,63 +11,79 @@
     />
   </head>
   <body>
-    <div class="survey" id="survey">
-      <div class="container">
-        <div class="survey-wrapper none"></div>
+    <section class="section section-main">
+      <div class="wrapper">
+        <div class="col col-6">
+          <div class="text-wrap text-padded">
+            <h1><%= json.mainHeader %></h1>
+            <p><%= json.mainSubheader %></p>
+            <div class="btns">
+              <a href="#survey" class="cta cta--contained cta--black"
+                ><%= json.mainSurvey %></a
+              >
+              <a href="rules" class="cta cta--underline cta--black"
+                ><%= json.mainRules %></a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="congratulations">
-      <div class="container">
-        <h2 class="congratulations-header">
-          Заполните ваши данные для участия в розыгрыше
-        </h2>
-        <p class="congratulations-subheader">
-          Вы сможете участвовать в розыгрыше призов, если пройдете опрос до
-          конца.
-        </p>
-        <form class="congratulations-form">
-          <h4 class="congratulations-form-header">Анкета участника</h4>
+    </section>
+    <section class="section section-form none">
+      <div class="wrapper wrapper-center">
+        <div class="col col-8">
+          <div class="text-wrap">
+            <h2 class="form-header">
+              Пожалуйста, заполните ваши данные
+            </h2>
+            <p class="form-subheader">
+              Ваши ответы очень важны для нас, чтобы мы могли и далее предоставлять вам первоклассный сервис
+            </p>
+          </div>
+        </div>
+        <form class="form-form">
+          <h4 class="form-form-header">Анкета участника</h4>
           <input
-            class="congratulations-form-input"
+            class="form-form-input"
             required
             id="name"
             type="text"
             placeholder="ФИО"
           />
-          <div class="congratulations-inputs">
+          <div class="form-inputs">
             <input
-              class="congratulations-form-input"
+              class="form-form-input"
               required
               id="phone"
               type="tel"
               placeholder="Телефон"
             />
             <input
-              class="congratulations-form-input"
+              class="form-form-input"
               required
               id="email"
               type="email"
               placeholder="Email"
             />
           </div>
-          <label class="form-control congratulations-checkboxWrapper">
+          <label class="form-control form-checkboxWrapper">
             <input
               required
               type="checkbox"
               data-omni-type="microsite"
-              class="congratulations-form-checkbox checkbox"
+              class="form-form-checkbox checkbox"
             />
-            <div class="option congratulations-checkbox">
-              <div class="option2 congratulations-checkbox-text">
+            <div class="option form-checkbox">
+              <div class="option2 form-checkbox-text">
                 Я ознакомлен и согласен с
-                <a href="rules" class="congratulations-form-rules"
+                <a href="rules" class="form-form-rules"
                   >Правилами и условиями передачи персональных данных.</a
                 >
               </div>
             </div>
           </label>
           <button
-            class="cta cta--contained cta--black congratulations-form-btn"
+            class="cta cta--contained cta--black form-form-btn"
             data-omni-type="microtype"
             data-omni="submitform"
           >
@@ -75,6 +91,15 @@
           </button>
         </form>
       </div>
+    </section>
+    <section class="section section-survey">
+      <div class="wrapper wrapper-center">
+        <div class="col col-7">
+          <div class="survey-wrapper"></div>
+        </div>
+      </div>
+    </section>
+    <div class="survey" id="survey">
     </div>
   </body>
 </html>

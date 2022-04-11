@@ -12,14 +12,14 @@ const questions = [
     omni: ['men', 'woman']
   },
   {
-    question: "Насколько Вы удовлетворены опытом пользования смартфоном Samsung по 5-бальной шкале?",
-    options: ["1 - Совершенно не удовлетворен", "2", "3", "4", "5 - Полностью удовлетворен"],
+    question: "Основываясь на Вашем опыте пользования смартфоном Samsung, насколько вероятно, что Вы рекомендуете эту марку смартфонов другу или коллеге, по 10-балльной шкале, где 1-\"Точно не буду рекомендовать\", а 10-\"Точно буду рекомендовать\"?",
+    options: ["1 - Точно НЕ буду рекомендовать", "2", "3", "4", "5 - Не уверены", "6", "7", "8", "9", "10 - Точно буду рекомендовать"],
     name: "phoneRating",
     type: "radio",
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["1", "2", "3", "4", "5"],
+    omni: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
   },
   {
     question: "Почему Вы снизили оценку?",
@@ -51,7 +51,15 @@ const questions = [
   {
     question:
       "С какими трудностями или неудобными моментами Вы столкнулись при взаимодействии с телефоном?",
-    options: ["Непонятный интерфейс", "Недостаточно памяти", "Не знаю как перенести данные на компьютер", "Не знаю как оградить ребенка от вредного контента", "Не знаю как обезопасить свои данные", "Отвлекающие уведомления в процессе игр", "Неудобно выполнять связанные с работой задачи", "Боюсь не вернуть телефон в случае потери или кражи"],
+    options: [
+      "Непонятный интерфейс", 
+      "Недостаточно памяти", 
+      "Не знаю как перенести данные на компьютер", 
+      "Не знаю как оградить ребенка от вредного контента", 
+      "Не знаю как обезопасить свои данные", 
+      "Отвлекающие уведомления в процессе игр", 
+      "Неудобно выполнять связанные с работой задачи", 
+      "Боюсь не вернуть телефон в случае потери или кражи"],
     name: "problemsPhone",
     ratings: [],
     type: "checkbox",
@@ -244,14 +252,13 @@ const questions = [
     options: [
       "Живу один (одна)",
       "Женат / замужем / гражданский брак",
-      "Разведен / вдова / вдовец",
     ],
     name: "martialStatus",
     ratings: [],
     type: "radio",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["single", "married", "divorced/widowed/widower"]
+    omni: ["single", "married"]
   },
   {
     question:
@@ -270,6 +277,59 @@ const questions = [
     class: "radio checkbox",
     classwrapper: "form-control",
     omni: ["no money", "no clothes", "no tv", "no car", "no home", "have home"]
+  },
+  {
+    question:
+      "Какую информацию Вы хотели бы получать от Samsung?",
+    options: [
+      "Информацию о новинках",
+      "Информацию о промо акциях - специальных выгодных предложениях",
+      "Информацию о скидках",
+      "Советы и рекомендации по пользованию вашими устройствами",
+      "Персонализированную информацию о скидках, акциях и прочих новостях",
+      "Информацию о новых технологиях и инновациях",
+      "Сравнительный анализ-ревью разных моделей",
+      "Другое <input class='q18'>",
+    ],
+    ratings: [],
+    name: "q18",
+    type: "checkbox",
+    class: "radio checkbox",
+    classwrapper: "form-control",
+    omni: []
+  },
+  {
+    question:
+      "Как часто вам было бы удобно получать информацию, отмеченную Вами выше?",
+    options: [
+      "1 раз в неделю",
+      "1 раз в 2 недели",
+      "1 раз в месяц",
+      "1 раз в 2 месяца",
+      "1 раз в квартал",
+      "Информацию о новых технологиях и инновациях",
+      "Сравнительный анализ-ревью разных моделей",
+      "Другое <input class='q19'",
+    ],
+    ratings: [],
+    name: "",
+    type: "radio",
+    class: "radio checkbox",
+    classwrapper: "form-control",
+    omni: []
+  },
+  {
+    question:
+      "Что бы вы хотели получить в подарок, покупая новый смартфон?",
+    options: [
+      "Запишите <input class='q20'",
+    ],
+    ratings: [],
+    name: "",
+    type: "radio",
+    class: "radio checkbox",
+    classwrapper: "form-control",
+    omni: []
   },
   {
     question: "Спасибо за участие",
@@ -406,7 +466,7 @@ function createOptions() {
     }
     surveyQuestions.insertAdjacentHTML("beforeend", block);
   }
-  if (questionNumber == 18) {
+  if (questionNumber == 21) {
     questionsContainer.innerHTML = `
       <h4 class="thankyou">Cпасибо за ваши ответы!</h4>
     `
@@ -459,6 +519,15 @@ function pushToData() {
       if (radios[i].name == 'familySituation') {
         formData.familySituation.push(radios[i].value)
       }
+      if (radios[i].name == 'q18') {
+        console.log(document.querySelector('.q18').value)
+      }
+      if (radios[i].name == 'q19') {
+        console.log(document.querySelector('.q18').value)
+      }
+      if (radios[i].name == 'q20') {
+        console.log(document.querySelector('.q18').value)
+      }
       formData.simple.push(radios[i].value);
     } else if (radios[i].id === "city-selector") {
       formData.city.push(radios[i].value);
@@ -469,12 +538,12 @@ function pushToData() {
 function rules() {
   if (questionNumber == 1) {
     if (formData.simple.includes('Нет')) {
-      questionNumber = 18
+      questionNumber = 21
     }
   }
 
   if (questionNumber == 2) {
-    if (formData.simple.includes('5 - Полностью удовлетворен')) {
+    if (formData.simple.includes('10 - Точно буду рекомендовать')) {
       questionNumber = 12
       surveyQuestionNumber = 12
     } else {
@@ -549,8 +618,8 @@ function rules() {
   }
 
   if (questionNumber == 18) {
-    surveyQuestionNumber = 18
-    postDataForm()
+    // surveyQuestionNumber = 18
+    // postDataForm()
   }
 }
 
@@ -580,7 +649,6 @@ function nextquestion() {
   rules();
   loadQuestions();
   console.log(formData)
-  console.log(questionNumber)
 }
 
 questionsContainer.addEventListener("click", (e) => {
@@ -627,7 +695,7 @@ questionsContainer.addEventListener("click", (e) => {
   }
 });
 
-const form = document.querySelector('.congratulations');
+const form = document.querySelector('.form-form');
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const phone = document.querySelector('#phone');

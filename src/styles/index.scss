@@ -10,6 +10,10 @@ $font_family_header: "SamsungSharpSans", "SamsungOne", arial, sans-serif;
 
 @import "./reset";
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -29,7 +33,7 @@ h6 {
 }
 
 h5 {
-  font-family: $font_family_normal;
+  font-family: $font_family_header;
 }
 ol {
   padding-left: 1.5em;
@@ -59,7 +63,7 @@ h4 {
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 p {
@@ -75,6 +79,278 @@ p {
     text-decoration: underline;
   }
 }
+
+input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  padding: 0 2px;
+}
+
+.btns {
+  margin-top: 24px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 266px;
+}
+
+.btn {
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px 24px 8px 24px;
+  font-size: 14px;
+  display: inline-flex;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  &:focus,
+  &:hover {
+    transition: background-color 400ms;
+
+    .trailing-icon {
+      path {
+        fill: #ffffff;
+      }
+    }
+  }
+  &-black {
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
+
+    &:hover,
+    &:focus{
+      background-color: #555555;
+      border: 1px solid #555555;
+      color: #EEEEEE;
+    }
+  }
+  &-white {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+
+    &:hover,
+    &:focus{
+      background-color: #DDDDDD;
+      border: 1px solid #DDDDDD;
+      color: #313131;
+    }
+  }
+}
+
+.section {
+  padding: 0;
+  position: relative;
+  font-size: 18px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+
+  &.section-invert {
+    color: #ffffff;
+    background-color: #000000;
+
+    .btn-p6 {
+      &-encased {
+        border-color: #ffffff;
+
+        &:hover {
+          color: #000000;
+          background-color: #ffffff;
+        }
+      }
+
+      &-text-underline {
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  & > .wrapper {
+    max-width: 1404px;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    .text-padded {
+      padding-left: 64px;
+    }
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: flex-start;
+    padding: 0;
+    align-items: center;
+
+    &.wrapper-reverse {
+      flex-flow: row-reverse wrap;
+    }
+
+    &.wrapper-center {
+      justify-content: center;
+    }
+  }
+
+  .col-break {
+    flex-basis: 100%;
+  }
+
+  .col {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 0 0px;
+    position: relative;
+
+    align-items: center;
+    justify-items: center;
+    justify-content: flex-start;
+    //padding: 0 12px;
+
+    &.col-wrapper {
+      padding: 0;
+    }
+
+    @for $i from 0 through 12 {
+      $w: $i/12;
+
+      &.col-#{$i} {
+        flex: 0 1 #{$w * 100%};
+      }
+    }
+
+    &.col-2-5 {
+      flex: 0 1 20%;
+    }
+
+    &.col-3-75 {
+      flex: 0 1 37.5%;
+    }
+  }
+
+  .col-even {
+    .input-row {
+      padding-left: 12px;
+    }
+  }
+
+  .col-odd {
+    .input-row {
+      padding-right: 12px;
+    }
+  }
+
+  .text-wrap {
+    margin: 0 12px;
+    flex: 1 1 auto;
+    margin-top: 32px;
+  }
+
+  .text-feature {
+    font-size: 14px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 24px;
+    margin-top: 56px;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      width: 96px;
+      height: 96px;
+      cursor: default;
+      margin-bottom: 0;
+    }
+
+    p {
+      flex: 0 1 auto;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    &.text-feature-1 + .background {
+      width: 237px;
+      height: 239px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.text-feature-2 + .background {
+      width: 310px;
+      height: 288px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.text-feature-3 + .background {
+      width: 276px;
+      height: 274px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .subline {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    position: relative;
+
+    &:after {
+      width: 165px;
+      height: 2px;
+      background-color: #000000;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      content: "";
+      display: block;
+    }
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.none {
+  display: none;
+  opacity: 0;
+}
+
+.section {
+  &-main {
+    background-image: url('../assets/img/bg/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 640px;
+  }
+  &-survey, &-form {
+    padding-bottom: 120px;
+  }
+}
+
 
 .container {
   max-width: 1440px;
@@ -249,7 +525,7 @@ input[type="checkbox"] + .option:before {
   position: absolute;
 }
 
-input[type="checkbox"] + .congratulations-checkbox:before {
+input[type="checkbox"] + .form-checkbox:before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -280,7 +556,7 @@ input[type="checkbox"] + .option.error:before {
   border: 1px solid red;
   border-radius: 100%;
 }
-input[type="checkbox"] + .congratulations-checkbox.error:before {
+input[type="checkbox"] + .form-checkbox.error:before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -309,7 +585,7 @@ input[type="checkbox"]:checked + .option:before {
     opacity: 0;
     cursor: pointer;
     bottom: 0;
-    &:checked ~ .congratulations-checkmark {
+    &:checked ~ .form-checkmark {
       border: 2px solid #2189ff !important;
     }
   }
@@ -418,9 +694,10 @@ input[type="text"] {
 
 .option2 {
   margin-left: 30px;
+  margin-top: 3px;
 }
 
-.congratulations {
+.form {
   padding-top: 44px;
   &-header {
     text-align: center;
@@ -468,7 +745,8 @@ input[type="text"] {
   }
   &-checkbox {
     &-text {
-      margin-left: 24px;
+      margin-left: 30px;
+      margin-top: 1px;
       > a {
         color: #1154CC;
         text-decoration: underline;
