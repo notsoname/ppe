@@ -53,4 +53,9 @@
   .sece-wrap {
     margin-top: vw(26, $unitPxVw);
   }
+  .survey {
+    &-wrapper {
+      width: vw(312, $unitPxVw);
+    }
+  }
 }
