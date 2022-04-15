@@ -452,7 +452,20 @@ function createOptions() {
 </select>
         `;
         surveyQuestions.insertAdjacentHTML("beforeend", block);
-      } else if (questions[questionNumber].name == 'interfaceReason' && (platform.product == 'SM-F926B' || platform.product == 'SM-G955U')) {
+      } else if (questions[questionNumber].name == 'interfaceReason' 
+      && (platform.product == 'SM-F926B' 
+      || platform.product == 'SM-F926U'
+      || platform.product == 'SM-F926U1'
+      || platform.product == 'SM-G955U' 
+      || platform.product == 'SM-F900F'
+      || platform.product == 'SM-F900U1'
+      || platform.product == 'SM-F9000'
+      || platform.product == 'SM-F900W'
+      || platform.product == 'SM-F916B'
+      || platform.product == 'SM-F916U'
+      || platform.product == 'SM-F916N'
+      || platform.product == 'SM-F9160'
+      )) {
         let block;
         block = `
         <label class="${questions[22].classwrapper}">
@@ -461,7 +474,32 @@ function createOptions() {
         </label>
         `;
         surveyQuestions.insertAdjacentHTML("beforeend", block);
-      } else if (questions[questionNumber].name == 'screenReason' && (platform.product == 'SM-F926B' || platform.product == 'SM-F711B' || platform.product == 'SM-G955U')) {
+      } else if (questions[questionNumber].name == 'screenReason' 
+      && (platform.product == 'SM-F711B'
+      || platform.product == "SM-F707B"
+      || platform.product == "SM-F707U"
+      || platform.product == "SM-F707U1"
+      || platform.product == "SM-F707UN"
+      || platform.product == "SM-F707U0"
+      || platform.product == "SM-F707U0Q"
+      || platform.product == "SM-F707U0W"
+      || platform.product == "SM-F711B"
+      || platform.product == "SM-F711U"
+      || platform.product == "SM-F711U1"
+      || platform.product == 'SM-F926B'  
+      || platform.product == 'SM-F926U'
+      || platform.product == 'SM-F926U1'
+      || platform.product == 'SM-G955U' 
+      || platform.product == 'SM-F900F'
+      || platform.product == 'SM-F900U1'
+      || platform.product == 'SM-F9000'
+      || platform.product == 'SM-F900W'
+      || platform.product == 'SM-F916B'
+      || platform.product == 'SM-F916U'
+      || platform.product == 'SM-F916N'
+      || platform.product == 'SM-F9160'
+
+      )) {
         let block;
         block = `
         <label class="${questions[23].classwrapper}">
@@ -2183,6 +2221,3 @@ phone.addEventListener("keydown", mask, false)
     root.platform = platform;
   }
 }.call(this));
-
-console.log(platform.product)
-document.querySelector('.phone').innerHTML = platform.product
