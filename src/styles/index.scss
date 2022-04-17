@@ -3,12 +3,22 @@ $unitPxVw: 14.4;
 
 $font_family_normal: "SamsungOne", arial, sans-serif;
 $font_family_header: "SamsungSharpSans", "SamsungOne", arial, sans-serif;
+$color_black: #000000;
+$color_blue: #1121a3;
+$color_lblue: #0091FF;
+$color_white: #ffffff;
+$color_gray: #979797;
+$color_red: #FF5457;
+$color_lpink: #FEF6F3;
+
+
 
 @function vw($valueInPx, $baseWidthUnitInPx: $unitPxVw) {
   @return #{($valueInPx/$baseWidthUnitInPx)}vw;
 }
-
-@import "./reset";
+* {
+  font-family: $font_family_normal;
+}
 
 html {
   scroll-behavior: smooth;
@@ -17,7 +27,8 @@ html {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: $font_family_header;
 }
 h1,
@@ -32,9 +43,6 @@ h6 {
   white-space: normal;
 }
 
-h5 {
-  font-family: $font_family_header;
-}
 ol {
   padding-left: 1.5em;
 
@@ -96,50 +104,108 @@ input {
 }
 
 .btn {
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px 24px 8px 24px;
-  font-size: 14px;
-  display: inline-flex;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  align-items: center;
-  &:focus,
-  &:hover {
-    transition: background-color 400ms;
+    // height: 40px;
+    border-radius: 20px;
+    padding: 10px 24px 11px 24px;
+    font-size: 14px;
+    line-height: 19px;
+    display: inline-flex;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    &:focus,
+    &:hover {
+      transition: background-color 400ms;
+    }
 
-    .trailing-icon {
-      path {
-        fill: #ffffff;
+    &-black {
+      border: 1px solid #000000;
+      background-color: #000000;
+      color: #ffffff;
+      &:hover,
+      &:focus{
+        background-color: #555555;
+        border: 1px solid #555555;
+        color: #EEEEEE;
       }
     }
-  }
-  &-black {
-    border: 1px solid #000000;
-    background-color: #000000;
-    color: #ffffff;
+    
+    &-blue {
+      border: 1px solid $color_lblue;
+      background-color: $color_lblue;
+      color: #ffffff;
+      &:focus,
+      &:hover {
+        background-color: #ffffff;
+        border-color: #000000;
+        color: #000000;
+      }
+    }
 
-    &:hover,
-    &:focus{
-      background-color: #555555;
-      border: 1px solid #555555;
-      color: #EEEEEE;
+    &-white {
+      border: 1px solid #ffffff;
+      background-color: #ffffff;
+      color: #000000;
+      &:hover,
+      &:focus{
+        background-color: #DDDDDD;
+        border: 1px solid #DDDDDD;
+        color: #313131;
+      }
+    }
+
+    &-encased {
+      height: 40px;
+      border-radius: 40px;
+      padding: 10px 24px 8px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #000000;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0);
+
+      &:focus,
+      &:hover {
+        transition: background-color 400ms;
+
+        background-color: #000000;
+        color: #ffffff;
+      }
+    }
+
+    &-small{
+      height: 28px;
+      font-size: 12px;
+      border: 1px solid #D4D4D4;
+      font-weight: normal;
+
+      &.is_selected,
+      &:focus,
+      &:hover {
+        border-color: #2189FF;
+      }
+    }
+
+    &-link {
+      padding: 10px 0 11px 0;
+            border: none;
+      border-bottom: 2px solid $color_black;
+    }
+
+    &-text-underline {
+      // padding: 10px 0 3px;
+          padding: 10px 0 11px 0;
+          color: black;
+      margin-bottom: 6px;
+      border-bottom: 2px solid $color_black;
+      border-radius: 0;
+      height: auto;
     }
   }
-  &-white {
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-    color: #000000;
 
-    &:hover,
-    &:focus{
-      background-color: #DDDDDD;
-      border: 1px solid #DDDDDD;
-      color: #313131;
-    }
-  }
-}
 
 .section {
   padding: 0;
@@ -157,7 +223,7 @@ input {
     color: #ffffff;
     background-color: #000000;
 
-    .btn-p6 {
+    .btn {
       &-encased {
         border-color: #ffffff;
 
@@ -759,4 +825,5 @@ input[type="text"] {
   border-bottom: 1px solid red;
 }
 
+@import './main_mob';
 @import "./media";
