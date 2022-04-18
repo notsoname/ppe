@@ -333,7 +333,6 @@ const questions = [
   },
   {
     question: "Спасибо за участие",
-    special: false,
     options: "",
   },
   {
@@ -395,181 +394,136 @@ function loadQuestions() {
 
 function createOptions() {
   const surveyQuestions = document.querySelector(".survey-questions");
-  if (!questions[questionNumber].special) {
-    for (let i = 0; i < questions[questionNumber].options.length; i++) {
-      if (questions[questionNumber].type == "select") {
-        const block = `
-        <img src="https://images.samsung.com/is/image/samsung/assets/kz_ru/offer/survey-multidevice-experience/select.png" alt="select" class="selectImg"></img>
-        <select id="city-selector" name="form-city" class='radio' required>
-    <option value="" selected data-default="true">Выберите из списка</option>
-    <option value="Нур-Султан">Нур-Султан</option>
-    <option value="Алматы">Алматы</option>
-    <option value="Аксай">Аксай</option>
-    <option value="Аксу">Аксу</option>
-    <option value="Аксукент">Аксукент</option>
-    <option value="Актау">Актау</option>
-    <option value="Актобе">Актобе</option>
-    <option value="Алтай (бывш. Зыряновск)">Алтай (бывш. Зыряновск)</option>
-    <option value="Аральск">Аральск</option>
-    <option value="Арыс">Арыс</option>
-    <option value="Атырау">Атырау</option>
-    <option value="Балхаш">Балхаш</option>
-    <option value="Есик">Есик</option>
-    <option value="Жанаозен">Жанаозен</option>
-    <option value="Жаркент">Жаркент</option>
-    <option value="Жезказган">Жезказган</option>
-    <option value="Жетысай">Жетысай</option>
-    <option value="Житикара">Житикара</option>
-    <option value="Кандыагаш">Кандыагаш</option>
-    <option value="Капшагай">Капшагай</option>
-    <option value="Караганда">Караганда</option>
-    <option value="Каскелен">Каскелен</option>
-    <option value="Кокшетау">Кокшетау</option>
-    <option value="Костанай">Костанай</option>
-    <option value="Кульсары">Кульсары</option>
-    <option value="Кызылорда">Кызылорда</option>
-    <option value="Ленгер">Ленгер</option>
-    <option value="Макинск">Макинск</option>
-    <option value="Павлодар">Павлодар</option>
-    <option value="Петропавловск">Петропавловск</option>
-    <option value="Риддер">Риддер</option>
-    <option value="Сарыагаш">Сарыагаш</option>
-    <option value="Семей">Семей</option>
-    <option value="Степногорск">Степногорск</option>
-    <option value="Талгар">Талгар</option>
-    <option value="Талдыкурган">Талдыкурган</option>
-    <option value="Тараз">Тараз</option>
-    <option value="Темиртау">Темиртау</option>
-    <option value="Туркестан">Туркестан</option>
-    <option value="Уральск">Уральск</option>
-    <option value="Усть-Каменогорск">Усть-Каменогорск</option>
-    <option value="Хромтау">Хромтау</option>
-    <option value="Шар">Шар</option>
-    <option value="Шахтинск">Шахтинск</option>
-    <option value="Шиели">Шиели</option>
-    <option value="Шымкент">Шымкент</option>
-    <option value="Экибастуз">Экибастуз</option>
-    <option value="other">Другой город</option>
+  for (let i = 0; i < questions[questionNumber].options.length; i++) {
+    if (questions[questionNumber].type == "select") {
+      const block = `
+      <img src="https://images.samsung.com/is/image/samsung/assets/kz_ru/offer/survey-multidevice-experience/select.png" alt="select" class="selectImg"></img>
+      <select id="city-selector" name="form-city" class='radio' required>
+  <option value="" selected data-default="true">Выберите из списка</option>
+  <option value="Нур-Султан">Нур-Султан</option>
+  <option value="Алматы">Алматы</option>
+  <option value="Аксай">Аксай</option>
+  <option value="Аксу">Аксу</option>
+  <option value="Аксукент">Аксукент</option>
+  <option value="Актау">Актау</option>
+  <option value="Актобе">Актобе</option>
+  <option value="Алтай (бывш. Зыряновск)">Алтай (бывш. Зыряновск)</option>
+  <option value="Аральск">Аральск</option>
+  <option value="Арыс">Арыс</option>
+  <option value="Атырау">Атырау</option>
+  <option value="Балхаш">Балхаш</option>
+  <option value="Есик">Есик</option>
+  <option value="Жанаозен">Жанаозен</option>
+  <option value="Жаркент">Жаркент</option>
+  <option value="Жезказган">Жезказган</option>
+  <option value="Жетысай">Жетысай</option>
+  <option value="Житикара">Житикара</option>
+  <option value="Кандыагаш">Кандыагаш</option>
+  <option value="Капшагай">Капшагай</option>
+  <option value="Караганда">Караганда</option>
+  <option value="Каскелен">Каскелен</option>
+  <option value="Кокшетау">Кокшетау</option>
+  <option value="Костанай">Костанай</option>
+  <option value="Кульсары">Кульсары</option>
+  <option value="Кызылорда">Кызылорда</option>
+  <option value="Ленгер">Ленгер</option>
+  <option value="Макинск">Макинск</option>
+  <option value="Павлодар">Павлодар</option>
+  <option value="Петропавловск">Петропавловск</option>
+  <option value="Риддер">Риддер</option>
+  <option value="Сарыагаш">Сарыагаш</option>
+  <option value="Семей">Семей</option>
+  <option value="Степногорск">Степногорск</option>
+  <option value="Талгар">Талгар</option>
+  <option value="Талдыкурган">Талдыкурган</option>
+  <option value="Тараз">Тараз</option>
+  <option value="Темиртау">Темиртау</option>
+  <option value="Туркестан">Туркестан</option>
+  <option value="Уральск">Уральск</option>
+  <option value="Усть-Каменогорск">Усть-Каменогорск</option>
+  <option value="Хромтау">Хромтау</option>
+  <option value="Шар">Шар</option>
+  <option value="Шахтинск">Шахтинск</option>
+  <option value="Шиели">Шиели</option>
+  <option value="Шымкент">Шымкент</option>
+  <option value="Экибастуз">Экибастуз</option>
+  <option value="other">Другой город</option>
 </select>
-        `;
-        surveyQuestions.insertAdjacentHTML("beforeend", block);
-      } else if (questions[questionNumber].name == 'interfaceReason' 
-      && (platform.product == 'SM-F926B' 
-      || platform.product == 'SM-F926U'
-      || platform.product == 'SM-F926U1'
-      || platform.product == 'SM-G955U' 
-      || platform.product == 'SM-F900F'
-      || platform.product == 'SM-F900U1'
-      || platform.product == 'SM-F9000'
-      || platform.product == 'SM-F900W'
-      || platform.product == 'SM-F916B'
-      || platform.product == 'SM-F916U'
-      || platform.product == 'SM-F916N'
-      || platform.product == 'SM-F9160'
-      )) {
-        let block;
-        block = `
-        <label class="${questions[22].classwrapper}">
-          <input data-omni-type="microsite" data-omni="${questions[22].omni[i]}" required type="${questions[22].type}" data-ratings=${questions[22].ratings[i]} name="${questions[22].name}" value="${questions[22].options[i]}" class="${questions[22].class}" />
-          <div class="option"><div class='option2'>${questions[22].options[i]}</div></div>
-        </label>
-        `;
-        surveyQuestions.insertAdjacentHTML("beforeend", block);
-      } else if (questions[questionNumber].name == 'screenReason' 
-      && (platform.product == 'SM-F711B'
-      || platform.product == "SM-F707B"
-      || platform.product == "SM-F707U"
-      || platform.product == "SM-F707U1"
-      || platform.product == "SM-F707UN"
-      || platform.product == "SM-F707U0"
-      || platform.product == "SM-F707U0Q"
-      || platform.product == "SM-F707U0W"
-      || platform.product == "SM-F711B"
-      || platform.product == "SM-F711U"
-      || platform.product == "SM-F711U1"
-      || platform.product == 'SM-F926B'  
-      || platform.product == 'SM-F926U'
-      || platform.product == 'SM-F926U1'
-      || platform.product == 'SM-G955U' 
-      || platform.product == 'SM-F900F'
-      || platform.product == 'SM-F900U1'
-      || platform.product == 'SM-F9000'
-      || platform.product == 'SM-F900W'
-      || platform.product == 'SM-F916B'
-      || platform.product == 'SM-F916U'
-      || platform.product == 'SM-F916N'
-      || platform.product == 'SM-F9160'
-
-      )) {
-        let block;
-        block = `
-        <label class="${questions[23].classwrapper}">
-          <input data-omni-type="microsite" data-omni="${questions[23].omni[i]}" required type="${questions[23].type}" data-ratings=${questions[23].ratings[i]} name="${questions[23].name}" value="${questions[23].options[i]}" class="${questions[23].class}" />
-          <div class="option"><div class='option2'>${questions[23].options[i]}</div></div>
-        </label>
-        `;
-        surveyQuestions.insertAdjacentHTML("beforeend", block);
-      } else {
-        let block;
-        if (questions[questionNumber].options[i] == '') {
-          console.log('s')
-          block = ''
-          return
-        }
-        block = `
-        <label class="${questions[questionNumber].classwrapper}">
-          <input data-omni-type="microsite" data-omni="${questions[questionNumber].omni[i]}" required type="${questions[questionNumber].type}" data-ratings=${questions[questionNumber].ratings[i]} name="${questions[questionNumber].name}" value="${questions[questionNumber].options[i]}" class="${questions[questionNumber].class}" />
-          <div class="option"><div class='option2'>${questions[questionNumber].options[i]}</div></div>
-        </label>
-        `;
-        if (
-          questions[questionNumber].options[i] == "Ничего из перечисленного"
-        ) {
-          block = `
-        <label class="${questions[questionNumber].classwrapper}">
-          <input data-omni-type="microsite" data-omni="${questions[questionNumber].omni[i]}" required type="${questions[questionNumber].type}" name="${questions[questionNumber].name}" value="${questions[questionNumber].options[i]}" class="radio unselect" />
-          <div class="option"><div class='option2'>${questions[questionNumber].options[i]}</div></div>
-        </label>
-        `;
-        }
-        if (
-          questions[questionNumber].options[i] == "Другое"
-        ) {
-          block = `
-        <label class="${questions[questionNumber].classwrapper}">
-          <input data-omni-type="microsite" data-omni="${questions[questionNumber].omni[i]}" required type="${questions[questionNumber].type}" name="${questions[questionNumber].name}" value="${questions[questionNumber].options[i]}" class="radio unselect" />
-          <div class="option"><div class='option2'>${questions[questionNumber].options[i]}</div></div>
-        </label>
-        `;
-        }
-        surveyQuestions.insertAdjacentHTML("beforeend", block);
-      }
-    }
-  } else {
-    let block = `
-        <div class="survey-special">
-            <h4>${questions[questionNumber].options}</h4>
-            <p>${questions[questionNumber].text}</p>
-        </div>
-    `;
-    if (
-      questions[questionNumber].text &&
-      questions[questionNumber].text.length > 1
-    ) {
+      `;
+      surveyQuestions.insertAdjacentHTML("beforeend", block);
+    } else if (questions[questionNumber].name == 'interfaceReason' 
+        && (platform.product == 'SM-F926B' 
+        || platform.product == 'SM-F926U'
+        || platform.product == 'SM-F926U1'
+        || platform.product == 'SM-G955U' 
+        || platform.product == 'SM-F900F'
+        || platform.product == 'SM-F900U1'
+        || platform.product == 'SM-F9000'
+        || platform.product == 'SM-F900W'
+        || platform.product == 'SM-F916B'
+        || platform.product == 'SM-F916U'
+        || platform.product == 'SM-F916N'
+        || platform.product == 'SM-F9160'
+    )) {
+      let block;
       block = `
-      <div class="survey-special">
-          <h4>${questions[questionNumber].options}</h4>
-            <p>1.${questions[questionNumber].text[0]}</p>
-            <p>2.${questions[questionNumber].text[1]}</;i>
-      </div>
-    `;
+      <label class="${questions[22].classwrapper}">
+        <input data-omni-type="microsite" data-omni="${questions[22].omni[i]}" required type="${questions[22].type}" data-ratings=${questions[22].ratings[i]} name="${questions[22].name}" value="${questions[22].options[i]}" class="${questions[22].class}" />
+        <div class="option"><div class='option2'>${questions[22].options[i]}</div></div>
+      </label>
+      `;
+      surveyQuestions.insertAdjacentHTML("beforeend", block);
+    } else if (questions[questionNumber].name == 'screenReason' 
+        && (platform.product == 'SM-F711B'
+        || platform.product == "SM-F707B"
+        || platform.product == "SM-F707U"
+        || platform.product == "SM-F707U1"
+        || platform.product == "SM-F707UN"
+        || platform.product == "SM-F707U0"
+        || platform.product == "SM-F707U0Q"
+        || platform.product == "SM-F707U0W"
+        || platform.product == "SM-F711B"
+        || platform.product == "SM-F711U"
+        || platform.product == "SM-F711U1"
+        || platform.product == 'SM-F926B'  
+        || platform.product == 'SM-F926U'
+        || platform.product == 'SM-F926U1'
+        || platform.product == 'SM-G955U' 
+        || platform.product == 'SM-F900F'
+        || platform.product == 'SM-F900U1'
+        || platform.product == 'SM-F9000'
+        || platform.product == 'SM-F900W'
+        || platform.product == 'SM-F916B'
+        || platform.product == 'SM-F916U'
+        || platform.product == 'SM-F916N'
+        || platform.product == 'SM-F9160'
+
+    )) {
+      let block;
+      block = `
+      <label class="${questions[23].classwrapper}">
+        <input data-omni-type="microsite" data-omni="${questions[23].omni[i]}" required type="${questions[23].type}" data-ratings=${questions[23].ratings[i]} name="${questions[23].name}" value="${questions[23].options[i]}" class="${questions[23].class}"/>
+        <div class="option"><div class='option2'>${questions[23].options[i]}</div></div>
+      </label>
+      `;
+      surveyQuestions.insertAdjacentHTML("beforeend", block);
+    } else {
+      let block;
+      if (questions[questionNumber].options[i] == '') {
+        block = ''
+        return
+      }
+      block = `
+      <label class="${questions[questionNumber].classwrapper}">
+        <input data-omni-type="microsite" data-omni="${questions[questionNumber].omni[i]}" required type="${questions[questionNumber].type}" data-ratings=${questions[questionNumber].ratings[i]} name="${questions[questionNumber].name}" value="${questions[questionNumber].options[i]}" class="${questions[questionNumber].class}"/>
+        <div class="option"><div class='option2'>${questions[questionNumber].options[i]}</div></div>
+      </label>
+      `;
+      surveyQuestions.insertAdjacentHTML("beforeend", block);
     }
-    surveyQuestions.insertAdjacentHTML("beforeend", block);
   }
   if (questionNumber == 21) {
-    questionsContainer.innerHTML = `
-      <h4 class="thankyou">Cпасибо за ваши ответы!</h4>
-    `
+    questionsContainer.innerHTML = `<h4 class="thankyou">Cпасибо за ваши ответы!</h4>`
   }
 }
 loadQuestions();
@@ -659,7 +613,7 @@ function pushToData() {
         formData.informationTime.push(radios[i].value)
       }
       if (radios[i].name == 'present') {
-        if (radios[i].value == "Другое <input class='q20' placeholder='Впишите'>") {
+        if (radios[i].value == "Запишите <input class='q20' placeholder='Впишите'>") {
           radios[i].value = document.querySelector('.q20').value
         }
         formData.present.push(radios[i].value)
@@ -786,8 +740,6 @@ function postDataForm() {
   data.append("informationTime", formData.informationTime);
   data.append("present", formData.present);
 
-
-
   data.append('name', name.value)
   data.append('phone', phone.value)
   data.append('email', email.value)
@@ -809,7 +761,6 @@ function nextquestion() {
   rules();
   loadQuestions();
   console.log(formData)
-  console.log(questionNumber)
 }
 
 questionsContainer.addEventListener("click", (e) => {
@@ -817,24 +768,7 @@ questionsContainer.addEventListener("click", (e) => {
   if (target.tagName == "SPAN") {
     nextquestion();
   }
-
   const radios = document.querySelectorAll(".radio");
-  const checkboxes = document.querySelectorAll(".checkbox");
-  const unselect = document.querySelector(".unselect");
-  if (target.tagName == "INPUT") {
-    unselect &&
-      unselect.addEventListener("click", () => {
-        checkboxes.forEach((radio) =>
-          radio.addEventListener("click", () => {
-            unselect.checked = false;
-          })
-        );
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked = false;
-        });
-      });
-  }
-
   if (target.tagName != "BUTTON") return;
 
   for (let i = 0, length = radios.length; i < length; i++) {
@@ -879,7 +813,6 @@ const isValidName = name => {
 const isValidPhone = phone => {
   return phone.length == 0 ? false : true 
 }
-
 const validateInputs = () => {
   const emailValue = email.value.trim();
   const nameValue = name.value.trim();
