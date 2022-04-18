@@ -758,8 +758,6 @@ function rules() {
   if (questionNumber == 21) {
     // surveyQuestionNumber = 21
     // postDataForm()
-    console.log(formData.technicalFeatures.join(', '))
-    console.log(formData.lowRatingReason.join(', '))
   }
 }
 
