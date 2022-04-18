@@ -718,9 +718,6 @@ function rules() {
 
   if (questionNumber == 6) {
     surveyQuestionNumber = 6
-    if (!formData.simple.includes('Пользование смартфоном порой негативно влияет на мою жизнь')) {
-      questionNumber = 12
-    }
     if (!formData.technicalFeatures.includes('Камера')) {
       questionNumber = 7
     }
@@ -758,9 +755,11 @@ function rules() {
     }
   }
 
-  if (questionNumber == 18) {
-    // surveyQuestionNumber = 18
+  if (questionNumber == 21) {
+    // surveyQuestionNumber = 21
     // postDataForm()
+    console.log(formData.technicalFeatures.join(', '))
+    console.log(formData.lowRatingReason.join(', '))
   }
 }
 
