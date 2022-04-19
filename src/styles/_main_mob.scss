@@ -1,12 +1,5 @@
 @media (max-width: $mobileWidth) {
   $unitPxVw: 3.6;
-  .desktop-only{
-    display: none!important;
-  }
-
-  .mobile-only{
-    display: block!important;
-  }
 
   h1, h2, h3, h4, h5, h6 {
     &:not(:first-child){
@@ -43,16 +36,16 @@
     margin-top: vw(8, $unitPxVw);
   }
 
-  ol{
+  ol {
     padding-left: vw(20, $unitPxVw);
-    li{
+    li {
       font-size: vw(20, $unitPxVw);
       padding-left: vw(5, $unitPxVw);
       text-align: left;
     }
   }
 
-  ul{
+  ul {
     margin: 0 0 vw(10, $unitPxVw);
   }
 
@@ -95,26 +88,9 @@
           flex: 1 0 100%;
           padding: 0;
         }
-        &.col-2-5 {
-          flex: 0 1 50%;
-        }
-        &.col-3-75 {
-          flex: 1 0 100%;
-        }
       }
     }
-    .col-even {
-      .input-row {
-        padding-left: 0;
-      }
-    }
-
-    .col-odd {
-      .input-row {
-        padding-right: 0;
-      }
-    }
-
+    
     .btn{
       &-white,
       &-encased,
@@ -127,8 +103,6 @@
         font-size: vw(14, $unitPxVw);
       }
       &-link {
-        font-size: vw(14, $unitPxVw);
-        height: auto;
         padding: vw(8, $unitPxVw) 0 vw(3, $unitPxVw) 0;
         margin-bottom: vw(6, $unitPxVw);
         &-underline{

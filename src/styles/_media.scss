@@ -1,32 +1,5 @@
 @media (max-width: $mobileWidth) {
   $unitPxVw: 3.6;
-  .container {
-    max-width: vw(312, $unitPxVw);
-  }
-  h1 {
-    font-size: vw(30, $unitPxVw);
-  }
-
-  h2 {
-    font-size: vw(26, $unitPxVw);
-  }
-
-  h3 {
-    font-size: vw(16, $unitPxVw);
-  }
-
-  h4 {
-    font-size: vw(22, $unitPxVw);
-  }
-
-  h5 {
-    font-size: vw(14, $unitPxVw);
-  }
-
-  h6 {
-    font-size: vw(14, $unitPxVw);
-  }
-
   .section {
     &-main {
       background-image: url('../assets/img/bg/bgmob.png');
@@ -34,25 +7,8 @@
       padding-top: vw(56, $unitPxVw);
       min-height: vw(640, $unitPxVw);
     }
-    &-bundles {
-      &-text {
-        margin-bottom: 0;
-        margin-top: vw(16, $unitPxVw);
-      }
-      &-header {
-        margin-bottom: vw(16, $unitPxVw);
-      }
-    }
   }
-  .show-desktop {
-    display: none !important;
-  }
-  .show-mobile {
-    display: block;
-  }
-  .sece-wrap {
-    margin-top: vw(26, $unitPxVw);
-  }
+
   .survey {
     &-wrapper {
       width: vw(312, $unitPxVw);
@@ -69,6 +25,7 @@
       margin-top: vw(24, $unitPxVw);
     }
   }
+
   .main {
     &-header {
       font-size: vw(24, $unitPxVw);
@@ -78,6 +35,7 @@
       max-width: vw(285, $unitPxVw);
     }
   }
+
   .form {
     &-subheader {
       font-size: vw(18, $unitPxVw);
