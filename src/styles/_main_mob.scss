@@ -126,14 +126,24 @@
         padding: vw(10, $unitPxVw) vw(16, $unitPxVw) vw(8, $unitPxVw) vw(16, $unitPxVw);
         font-size: vw(14, $unitPxVw);
       }
-      &-text{
+      &-link {
         font-size: vw(14, $unitPxVw);
         height: auto;
         padding: vw(8, $unitPxVw) 0 vw(3, $unitPxVw) 0;
         margin-bottom: vw(6, $unitPxVw);
-      }
-      &-text-underline{
-        border-bottom: vw(2, $unitPxVw) solid $color_black;
+        &-underline{
+          &::after {
+            bottom: vw(0, $unitPxVw);
+            height: vw(2, $unitPxVw);
+          }
+          &:hover {
+            &::after {
+                animation:cta-underline-animation .2s both;
+                animation-timing-function:cubic-bezier(0.4,0,0.2,1);
+                animation-delay:.1s
+            }
+          }
+        }
       }
       &-small{
         height: vw(28, $unitPxVw);

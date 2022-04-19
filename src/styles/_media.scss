@@ -94,7 +94,22 @@
       }
     }
   }
-
+  .option {
+    font-size: vw(18, $unitPxVw);
+  }
+  .option2 {
+    margin-left: vw(30, $unitPxVw);
+  }
+  input[type="checkbox"] + .option:before {
+    top: 3px;
+    width: vw(24, $unitPxVw);
+    height: vw(24, $unitPxVw);
+  }
+  input[type="radio"] + .option:before {
+    top: 3px;
+    width: vw(24, $unitPxVw);
+    height: vw(24, $unitPxVw);
+  }
   .q18,
   .q19,
   .q20 {

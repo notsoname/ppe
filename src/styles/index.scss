@@ -171,20 +171,15 @@ p {
 
     &-encased {
       height: 40px;
-      border-radius: 40px;
-      padding: 10px 24px 8px 24px;
-      font-size: 14px;
-      font-weight: bold;
-      border: 1px solid #DEDEDE;
+      padding: 8px 24px 8px 24px;
+      border: 1px solid #000000;
       display: inline-block;
       text-decoration: none;
-      cursor: pointer;
       background-color: rgba(255, 255, 255, 0);
       &:focus,
       &:hover {
         transition: background-color 400ms;
-
-        background-color: $color_lblue;
+        background-color:rgba(0,0,0,0.05);
         color: #ffffff;
       }
       &-black {
@@ -205,7 +200,6 @@ p {
       font-size: 12px;
       border: 1px solid #D4D4D4;
       font-weight: normal;
-
       &.is_selected,
       &:focus,
       &:hover {
@@ -213,15 +207,30 @@ p {
       }
     }
 
-    &-text {
-      padding: 10px 0 3px;
-      margin-bottom: 6px;
-      border-radius: 0;
-      height: auto;
-      color: #000000;
-    }
-    &-text-underline {
-      border-bottom: 2px solid $color_black;
+    &-link {
+      color: #000;
+      transition-timing-function: cubic-bezier(0.33,0,0.3,1);
+      transition-duration: .2s;
+      position: relative;
+      &-underline {
+        padding: 10px 0 11px 0;
+        &::after {
+          content: ' ';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 8px;
+          height: 2px;
+          background-color: currentColor;
+        }
+        &:hover {
+          &::after {
+              animation:cta-underline-animation .2s both;
+              animation-timing-function:cubic-bezier(0.4,0,0.2,1);
+              animation-delay:.1s
+          }
+        }
+      }
     }
   }
 
@@ -242,12 +251,12 @@ p {
       align-items: center;
       padding-top: 8px;
       &:not(:last-child) {
-        // margin-bottom: 16px;
+        margin-bottom: 16px;
       }
       &-small{
         margin: 0 4px;
         &:not(:last-child) {
-          // margin-bottom: 8px;
+          margin-bottom: 8px;
         }
       }
 
@@ -256,7 +265,7 @@ p {
       }
 
       &:last-child {
-        //margin-right: 0;
+        margin-right: 0;
       }
     }
   }
@@ -513,6 +522,7 @@ input[type="radio"] + .option:before {
   border: 1px solid black;
   border-radius: 100%;
   position: absolute;
+  top: 1px;
 }
 
 input[type="radio"]:checked + .option:before {
@@ -538,6 +548,7 @@ input[type="checkbox"] + .option:before {
   border: 1px solid black;
   border-radius: 100%;
   position: absolute;
+  top: 1px;
 }
 
 input[type="checkbox"] + .form-checkbox:before {
