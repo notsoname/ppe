@@ -21,8 +21,6 @@
               <a data-omni="<%= json.omni %>:goto:survey" data-omni-type="<%= json.microsite %>" href="#survey" class="btn btn-black">
                 <%= json.mainSurvey %>
               </a>
-              <a data-omni="<%= json.omni %>:goto:rules" data-omni-type="<%= json.microsite %>" href="rules" class="btn btn-link btn-link-underline">
-                <%= json.mainRules %>
               </a>
             </div>
           </div>
@@ -41,10 +39,10 @@
             </p>
           </div>
         </div>
-        <form class="form-form">
-          <h4 class="form-form-header">Анкета участника</h4>
+        <form class="form">
+          <h4 class="form-header">Анкета участника</h4>
           <input
-            class="form-form-input"
+            class="form-input"
             required
             id="name"
             type="text"
@@ -52,14 +50,14 @@
           />
           <div class="form-inputs">
             <input
-              class="form-form-input"
+              class="form-input"
               required
               id="phone"
               type="tel"
               placeholder="Телефон"
             />
             <input
-              class="form-form-input"
+              class="form-input"
               required
               id="email"
               type="email"
@@ -71,19 +69,19 @@
               required
               type="checkbox"
               data-omni-type="microsite"
-              class="form-form-checkbox checkbox"
+              class="form-checkbox checkbox"
             />
             <div class="option form-checkbox">
               <div class="option2 form-checkbox-text">
                 Я ознакомлен и согласен с
-                <a href="rules" class="form-form-rules"
+                <a data-omni="<%= json.omni %>:goto:personaldata" data-omni-type="<%= json.microsite %>" href="https://www.samsung.com/kz_ru/info/privacy/#personal_data" class="form-form-rules"
                   >Правилами и условиями передачи персональных данных.</a
                 >
               </div>
             </div>
           </label>
           <button
-            class="cta cta--contained cta--black form-form-btn"
+            class="cta cta--contained cta--black form-btn"
             data-omni-type="microtype"
             data-omni="<%= json.omni %>:submitform"
           >
@@ -92,7 +90,7 @@
         </form>
       </div>
     </section>
-    <section class="section section-survey ">
+    <section class="section section-survey">
       <div class="wrapper wrapper-center">
         <div class="col col-7">
           <div class="survey-wrapper none"></div>

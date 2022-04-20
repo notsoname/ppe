@@ -40,16 +40,17 @@
     &-subheader {
       font-size: vw(18, $unitPxVw);
     }
-    &-form {
-      margin-top: vw(24, $unitPxVw);
-      width: vw(312, $unitPxVw);
-      padding: vw(24, $unitPxVw);
-      &-input {
-        width: 100%;
-      }
-      &-rules {
-        font-size: vw(14, $unitPxVw);
-      }
+    margin-top: vw(24, $unitPxVw);
+    width: vw(312, $unitPxVw);
+    padding: vw(24, $unitPxVw);
+    &-input {
+      width: 100%;
+    }
+    &-rules {
+      font-size: vw(14, $unitPxVw);
+    }
+    &-checkbox-text {
+      font-size: vw(14, $unitPxVw);
     }
   }
   .option {
@@ -60,18 +61,18 @@
   }
   input[type="checkbox"] + .option:before {
     top: 3px;
-    width: vw(24, $unitPxVw);
-    height: vw(24, $unitPxVw);
+    width: vw(22, $unitPxVw);
+    height: vw(22, $unitPxVw);
   }
   input[type="radio"] + .option:before {
     top: 3px;
-    width: vw(24, $unitPxVw);
-    height: vw(24, $unitPxVw);
+    width: vw(22, $unitPxVw);
+    height: vw(22, $unitPxVw);
   }
   .q18,
   .q19,
   .q20 {
-      width: vw(150, $unitPxVw);
+      width: vw(145, $unitPxVw);
       font-size: vw(18, $unitPxVw);
   }
 }

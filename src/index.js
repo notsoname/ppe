@@ -11,7 +11,7 @@ const questions = [
     class: "radio checkbox",
     ratings: [],
     classwrapper: "form-control",
-    omni: ['men', 'woman']
+    omni: ['yes', 'no']
   },
   {
     question: "Основываясь на Вашем опыте пользования смартфоном Samsung, насколько вероятно, что Вы рекомендуете эту марку смартфонов другу или коллеге, по 10-балльной шкале, где 1-\"Точно не буду рекомендовать\", а 10-\"Точно буду рекомендовать\"?",
@@ -31,7 +31,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["lowRatingReason"]
+    omni: ["badTech", "difficultInteract", "negativeExperience"]
   },
   {
     question: "Какая из технических особенностей не оправдала ваши ожидания?",
@@ -67,7 +67,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: [],
+    omni: ["incomprehensibleInterface", "notEnoughMemory", "dontknowDataToPC", "protectChild", "saveData", "distractingNotifications", "difficultWorkTask", "stealProblems"],
   },
   {
     question:
@@ -83,7 +83,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["wasteTime", "distractingNotifications", "tiredEyes", "insomnia"]
   },
   {
     question: "Что именно вам не нравится в камере?",
@@ -103,7 +103,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["fuzzyPhoto", "desaturatedСolors", "tooMuchLight", "badNightShooting", "badColor", "tooManyPhotos", "dontKnowStabilization", "dontknowVideoEditing"]
   },
   {
     question: "Что именно вам не нравится в батарее телефона?",
@@ -117,7 +117,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["dischargesQuickly", "heatsCharging", "needToCharge"]
   },
   {
     question:
@@ -133,14 +133,14 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["memoryFillsFast", "notEnoghtMemory", "dontknowfindFile", "dontknowConnectCloudStorage"]
   },
   {
     question:
       "Что вам не нравится в производительности телефона?",
     options: [
       "Приложения открываются с задержкой",
-      "Не могу работать в двух и более приложениях одновременно ",
+      "Не могу работать в двух и более приложениях одновременно",
       "Приложения зависают во время работы",
       "Телефон перезагружается самостоятельно",
       "Подвисают игры / видео",
@@ -150,7 +150,7 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["lagging", "cannotuseTwoOrMoreApp", "freeze", "reload", "laggingWhileGameOrVideo"]
   },
   {
     question:
@@ -170,7 +170,13 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["difficultFindWhere", 
+      "unusualBtnLayot", 
+      "dontlikeIconDesignApp", 
+      "dontknowCustomizePhone", 
+      "dontknowUseDoubleScreen", 
+      "unpleasantLookBrightScreen"
+    ]
   },
   {
     question:
@@ -184,12 +190,17 @@ const questions = [
       "",
       ""
     ],
-    name: "screenReason",
+    name: "problemsScreen",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
     ratings: [],
-    omni: [""]
+    omni: ["picturesQuality", 
+      "dontknowCustomizeScreen", 
+      "tooBright", 
+      "cantUseOneHand", 
+      "notBrightScreen"
+    ]
   },
   {
     question:
@@ -210,7 +221,16 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["camera", 
+          "battery", 
+          "performance" , 
+          "memory", 
+          "design", 
+          "comfortableHold", 
+          "sound",
+          "brand",
+          "abilityFoldPhone"
+        ]
   },
   {
     question: "Что вам хотелось бы улучшить в этом смартфоне?",
@@ -228,7 +248,14 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["Battery",
+      "screen",
+      "appearance",
+      "CPU",
+      "audioSystem",
+      "memory",
+      "camera" 
+    ]
   },
   {
     question: "Ваш возраст?",
@@ -298,7 +325,14 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["newItemInfo",
+      "promoInfo",
+      "discountInfo",
+      "recomendationInfo",
+      "personalInfoAboutPromotions",
+      "newTechInfo",
+      "comparativeAnalysisInfo"
+    ]
   },
   {
     question:
@@ -316,7 +350,12 @@ const questions = [
     type: "radio",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["onceweek",
+      "1TimeIn2Week",
+      "1Timepermonth",
+      "1Timein2Month",
+      "1TimePerQuarter"
+    ]
   },
   {
     question:
@@ -353,7 +392,14 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["difficultFindWhere", 
+      "unusualBtnLayot", 
+      "dontlikeIconDesignApp", 
+      "dontknowCustomizePhone", 
+      "dontknowUseDoubleScreen", 
+      "uncomfortableLookStoriesInst",
+      "unpleasantLookBrightScreen"
+    ]
   },
   {
     question:
@@ -367,12 +413,20 @@ const questions = [
       "Не могу управлять смартфоном одной рукой",
       "Недостаточно яркий экран"
     ],
-    name: "screenReason",
+    name: "problemsScreen",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
     ratings: [],
-    omni: [""]
+    omni: [
+      "unfoledLine",
+      "foledSmall",
+      "picturesQuality", 
+      "dontknowCustomizeScreen", 
+      "tooBright", 
+      "cantUseOneHand", 
+      "notBrightScreen"
+    ]
   },
 ];
 const questionsContainer = document.querySelector(".survey-wrapper");
@@ -382,7 +436,7 @@ let surveyQuestionNumber = 0;
 function loadQuestions() {
   for (let i = questionNumber; i < questions.length; i++) {
     questionsContainer.innerHTML = `
-      <h4 class="survey-questionNumber">Вопрос ${surveyQuestionNumber + 1}/${questions.length - 1}</h4>
+      <h4 class="survey-questionNumber">Вопрос ${surveyQuestionNumber + 1}/${questions.length - 3}</h4>
       <div class="survey-question">${questions[questionNumber].question}</div>
       <div class="survey-questions">
       </div>
@@ -473,7 +527,7 @@ function createOptions() {
       </label>
       `;
       surveyQuestions.insertAdjacentHTML("beforeend", block);
-    } else if (questions[questionNumber].name == 'screenReason' 
+    } else if (questions[questionNumber].name == 'problemsScreen' 
         && (platform.product == 'SM-F711B'
         || platform.product == "SM-F707B"
         || platform.product == "SM-F707U"
@@ -537,7 +591,7 @@ const formData = {
   problemsMemory: [],
   problemsPerformance: [],
   problemsInterface: [],
-  screenReason: [],
+  problemsScreen: [],
   improvement: [],
   negativeInfluence: [],
   problemsPhone: [],
@@ -582,8 +636,8 @@ function pushToData() {
       if (radios[i].name == 'problemsInterface') {
         formData.problemsInterface.push(radios[i].value)
       }
-      if (radios[i].name == 'screenReason') {
-        formData.screenReason.push(radios[i].value)
+      if (radios[i].name == 'problemsScreen') {
+        formData.problemsScreen.push(radios[i].value)
       }
       if (radios[i].name == 'highRatingReason') {
         formData.highRatingReason.push(radios[i].value)
@@ -726,7 +780,7 @@ function postDataForm() {
   data.append("problemsMemory", formData.problemsMemory.join(', '));
   data.append("problemsPerformance", formData.problemsPerformance.join(', '));
   data.append("problemsInterface", formData.problemsInterface.join(', '));
-  data.append("screenReason", formData.screenReason.join(', '));
+  data.append("problemsScreen", formData.problemsScreen.join(', '));
 
   data.append("problemsPhone", formData.problemsPhone.join(', '));
   data.append("negativeInfluence", formData.negativeInfluence.join(', '));
@@ -761,7 +815,7 @@ function nextquestion() {
   pushToData();
   rules();
   loadQuestions();
-  console.log(formData)
+  // console.log(formData)
 }
 
 questionsContainer.addEventListener("click", (e) => {
@@ -775,6 +829,24 @@ questionsContainer.addEventListener("click", (e) => {
   for (let i = 0, length = radios.length; i < length; i++) {
     let count = 0;
     if (radios[i].checked) {
+      if (radios[i].value == "Другое <input class='q18' placeholder='Впишите'>") {
+        if (document.querySelector('.q18').value == 0) {
+          document.querySelector('.q18').style.borderBottom = "1px solid red";
+          return;
+        }
+      }
+      if (radios[i].value == "Другое <input class='q19' placeholder='Впишите'>") {
+        if (document.querySelector('.q19').value == 0) {
+          document.querySelector('.q19').style.borderBottom = "1px solid red";
+          return;
+        }
+      }
+      if (radios[i].value == "Запишите <input class='q20' placeholder='Впишите'>") {
+        if (document.querySelector('.q20').value == 0) {
+          document.querySelector('.q20').style.borderBottom = "1px solid red";
+          return;
+        }
+      }
       count++;
       if (count > 0) nextquestion();
       return;
@@ -791,7 +863,7 @@ questionsContainer.addEventListener("click", (e) => {
   }
 });
 
-const form = document.querySelector('.form-form');
+const form = document.querySelector('.form');
 const sectionForm = document.querySelector('.section-form')
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
