@@ -180,7 +180,7 @@ p {
       &:hover {
         transition: background-color 400ms;
         background-color:rgba(0,0,0,0.05);
-        color: #ffffff;
+        color: #000000;
       }
       &-black {
         border: 1px solid #000;
@@ -365,7 +365,7 @@ p {
 
 .section {
   &-main {
-    background-image: url('../assets/img/bg/bg.png');
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/kz_ru/offer/survey-smartphones-experience/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 640px;
