@@ -18,10 +18,10 @@
             <h1 class="main-header"><%= json.mainHeader %></h1>
             <p class="main-subheader"><%= json.mainSubheader %></p>
             <div class="btns">
-              <a href="#survey" class="btn btn-black">
+              <a data-omni="<%= json.omni %>:goto:survey" data-omni-type="<%= json.microsite %>" href="#survey" class="btn btn-black">
                 <%= json.mainSurvey %>
               </a>
-              <a href="rules" class="btn btn-link btn-link-underline">
+              <a data-omni="<%= json.omni %>:goto:rules" data-omni-type="<%= json.microsite %>" href="rules" class="btn btn-link btn-link-underline">
                 <%= json.mainRules %>
               </a>
             </div>
@@ -29,7 +29,7 @@
         </div>
       </div>
     </section>
-    <section id="survey" class="section section-form none">
+    <section id="survey" class="section section-form ">
       <div class="wrapper wrapper-center">
         <div class="col col-8">
           <div class="text-wrap">
@@ -85,17 +85,17 @@
           <button
             class="cta cta--contained cta--black form-form-btn"
             data-omni-type="microtype"
-            data-omni="submitform"
+            data-omni="<%= json.omni %>:submitform"
           >
             Отправить
           </button>
         </form>
       </div>
     </section>
-    <section class="section section-survey">
+    <section class="section section-survey ">
       <div class="wrapper wrapper-center">
         <div class="col col-7">
-          <div class="survey-wrapper"></div>
+          <div class="survey-wrapper none"></div>
         </div>
       </div>
     </section>

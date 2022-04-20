@@ -48,7 +48,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["camera", "battery", "memory", "performance", "interface", "display"]
+    omni: ["camera", "battery", "memory", "performance", "interface", "screen"]
   },
   {
     question:
@@ -67,7 +67,7 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["1", "2", "3", "4", "5", "6 and above"],
+    omni: [],
   },
   {
     question:
@@ -79,11 +79,11 @@ const questions = [
       "У меня бессонница после длительного пользования смартфоном вечером",
     ],
     ratings: [],
-    name: "negativeLife",
+    name: "negativeInfluence",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["wasteTime", "no clothes", "no tv", "no car"]
+    omni: []
   },
   {
     question: "Что именно вам не нравится в камере?",
@@ -99,7 +99,7 @@ const questions = [
       "Не знаю как использовать функции для монтажа видео",
     ],
     ratings: [],
-    name: "cameraReason",
+    name: "problemsCamera",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
@@ -112,7 +112,7 @@ const questions = [
       "Телефон греется во время зарядки",
       "Раздражает необходимость заряжать телефон, часы и наушники",
     ],
-    name: "batteryReason",
+    name: "problemsBattery",
     ratings: [],
     type: "checkbox",
     class: "radio checkbox",
@@ -128,7 +128,7 @@ const questions = [
       "Не знаю как найти сохраненный файл",
       "Не знаю как подключить облачное хранилище",
     ],
-    name: "memoryReason",
+    name: "problemsMemory",
     ratings: [],
     type: "checkbox",
     class: "radio checkbox",
@@ -145,7 +145,7 @@ const questions = [
       "Телефон перезагружается самостоятельно",
       "Подвисают игры / видео",
     ],
-    name: "perfomanceReason",
+    name: "problemsPerformance",
     type: "checkbox",
     ratings: [],
     class: "radio checkbox",
@@ -165,7 +165,7 @@ const questions = [
       "Неприятно вечером смотреть на яркий экран",
       "",
     ],
-    name: "interfaceReason",
+    name: "problemsInterface",
     type: "checkbox",
     ratings: [],
     class: "radio checkbox",
@@ -206,7 +206,7 @@ const questions = [
       "Возможность складывать телефон в компактный размер",
     ],
     ratings: [],
-    name: "likeSamsung",
+    name: "highRatingReason",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
@@ -223,7 +223,7 @@ const questions = [
       "Память",
       "Камеру",
     ],
-    name: "improvePhone",
+    name: "improvement",
     ratings: [],
     type: "checkbox",
     class: "radio checkbox",
@@ -255,7 +255,7 @@ const questions = [
       "Живу один (одна)",
       "Женат / замужем / гражданский брак",
     ],
-    name: "martialStatus",
+    name: "maritalStatus",
     ratings: [],
     type: "radio",
     class: "radio checkbox",
@@ -274,7 +274,7 @@ const questions = [
       "У нас нет никаких финансовых затруднений. При необходимости мы можем купить квартиру или дом",
     ],
     ratings: [],
-    name: "familySituation",
+    name: "income",
     type: "radio",
     class: "radio checkbox",
     classwrapper: "form-control",
@@ -294,7 +294,7 @@ const questions = [
       "Другое <input class='q18' placeholder='Впишите'>",
     ],
     ratings: [],
-    name: "wantInformation",
+    name: "subscribe",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
@@ -312,7 +312,7 @@ const questions = [
       "Другое <input class='q19' placeholder='Впишите'>",
     ],
     ratings: [],
-    name: "informationTime",
+    name: "subscribeTime",
     type: "radio",
     class: "radio checkbox",
     classwrapper: "form-control",
@@ -348,7 +348,7 @@ const questions = [
       "Неудобно смотреть сториз в Инстаграм",
       "Неприятно вечером смотреть на яркий экран"
     ],
-    name: "interfaceReason",
+    name: "problemsInterface",
     type: "checkbox",
     ratings: [],
     class: "radio checkbox",
@@ -386,7 +386,7 @@ function loadQuestions() {
       <div class="survey-question">${questions[questionNumber].question}</div>
       <div class="survey-questions">
       </div>
-      <button data-omni-type="microsite" data-omni="kz_ru:offer:survey-multidevice-experience:nextquestion${surveyQuestionNumber + 1}" class="cta cta--outlined cta--black survey-next">Следующий вопрос</button>
+      <button data-omni-type="microsite" data-omni="kz_ru:offer:survey-smartphones-experience:nextquestion${surveyQuestionNumber + 1}" class="btn btn-encased survey-next">Следующий вопрос</button>
       `;
   }
   createOptions();
@@ -451,7 +451,7 @@ function createOptions() {
 </select>
       `;
       surveyQuestions.insertAdjacentHTML("beforeend", block);
-    } else if (questions[questionNumber].name == 'interfaceReason' 
+    } else if (questions[questionNumber].name == 'problemsInterface' 
         && (platform.product == 'SM-F926B' 
         || platform.product == 'SM-F926U'
         || platform.product == 'SM-F926U1'
@@ -532,22 +532,22 @@ const formData = {
   simple: [],
   lowRatingReason: [],
   technicalFeatures: [],
-  cameraReason: [],
-  batteryReason: [],
-  memoryReason: [],
-  perfomanceReason: [],
-  interfaceReason: [],
+  problemsCamera: [],
+  problemsBattery: [],
+  problemsMemory: [],
+  problemsPerformance: [],
+  problemsInterface: [],
   screenReason: [],
-  improvePhone: [],
-  negativeLife: [],
+  improvement: [],
+  negativeInfluence: [],
   problemsPhone: [],
-  likeSamsung: [],
+  highRatingReason: [],
   age: [],
   city: [],
-  martialStatus: [],
-  familySituation: [],
-  wantInformation: [],
-  informationTime: [],
+  maritalStatus: [],
+  income: [],
+  subscribe: [],
+  subscribeTime: [],
   present: []
 };
 
@@ -561,56 +561,56 @@ function pushToData() {
       if (radios[i].name == 'technicalFeatures') {
         formData.technicalFeatures.push(radios[i].value)
       }
-      if (radios[i].name == 'negativeLife') {
-        formData.negativeLife.push(radios[i].value)
+      if (radios[i].name == 'negativeInfluence') {
+        formData.negativeInfluence.push(radios[i].value)
       }
       if (radios[i].name == 'problemsPhone') {
         formData.problemsPhone.push(radios[i].value)
       }
-      if (radios[i].name == 'cameraReason') {
-        formData.cameraReason.push(radios[i].value)
+      if (radios[i].name == 'problemsCamera') {
+        formData.problemsCamera.push(radios[i].value)
       }
-      if (radios[i].name == 'batteryReason') {
-        formData.batteryReason.push(radios[i].value)
+      if (radios[i].name == 'problemsBattery') {
+        formData.problemsBattery.push(radios[i].value)
       }
-      if (radios[i].name == 'memoryReason') {
-        formData.memoryReason.push(radios[i].value)
+      if (radios[i].name == 'problemsMemory') {
+        formData.problemsMemory.push(radios[i].value)
       }
-      if (radios[i].name == 'perfomanceReason') {
-        formData.perfomanceReason.push(radios[i].value)
+      if (radios[i].name == 'problemsPerformance') {
+        formData.problemsPerformance.push(radios[i].value)
       }
-      if (radios[i].name == 'interfaceReason') {
-        formData.interfaceReason.push(radios[i].value)
+      if (radios[i].name == 'problemsInterface') {
+        formData.problemsInterface.push(radios[i].value)
       }
       if (radios[i].name == 'screenReason') {
         formData.screenReason.push(radios[i].value)
       }
-      if (radios[i].name == 'likeSamsung') {
-        formData.likeSamsung.push(radios[i].value)
+      if (radios[i].name == 'highRatingReason') {
+        formData.highRatingReason.push(radios[i].value)
       }
-      if (radios[i].name == 'improvePhone') {
-        formData.improvePhone.push(radios[i].value)
+      if (radios[i].name == 'improvement') {
+        formData.improvement.push(radios[i].value)
       }
       if (radios[i].name == 'age') {
         formData.age.push(radios[i].value)
       }
-      if (radios[i].name == 'martialStatus') {
-        formData.martialStatus.push(radios[i].value)
+      if (radios[i].name == 'maritalStatus') {
+        formData.maritalStatus.push(radios[i].value)
       }
-      if (radios[i].name == 'familySituation') {
-        formData.familySituation.push(radios[i].value)
+      if (radios[i].name == 'income') {
+        formData.income.push(radios[i].value)
       }
-      if (radios[i].name == 'wantInformation') {
+      if (radios[i].name == 'subscribe') {
         if (radios[i].value == "Другое <input class='q18' placeholder='Впишите'>") {
           radios[i].value = document.querySelector('.q18').value
         }
-        formData.wantInformation.push(radios[i].value)
+        formData.subscribe.push(radios[i].value)
       }
-      if (radios[i].name == 'informationTime') {
+      if (radios[i].name == 'subscribeTime') {
         if (radios[i].value == "Другое <input class='q19' placeholder='Впишите'>") {
           radios[i].value = document.querySelector('.q19').value
         }
-        formData.informationTime.push(radios[i].value)
+        formData.subscribeTime.push(radios[i].value)
       }
       if (radios[i].name == 'present') {
         if (radios[i].value == "Запишите <input class='q20' placeholder='Впишите'>") {
@@ -710,48 +710,49 @@ function rules() {
   }
 
   if (questionNumber == 21) {
-    // surveyQuestionNumber = 21
-    // postDataForm()
+    surveyQuestionNumber = 21
+    postDataForm()
   }
 }
 
 function postDataForm() {
   let data = new FormData();
-  data.append("usedSamsung", formData.simple[0])
+  data.append("usedSamsung", formData.simple[0] == "Да" ? '1' : '0')
   data.append("rating", formData.simple[1]);
   data.append("lowRatingReason", formData.lowRatingReason.join(', '));
   data.append("technicalFeatures", formData.technicalFeatures.join(', '));
-  data.append("cameraReason", formData.cameraReason.join(', '));
-  data.append("batteryReason", formData.batteryReason.join(', '));
-  data.append("memoryReason", formData.memoryReason.join(', '));
-  data.append("perfomanceReason", formData.perfomanceReason.join(', '));
-  data.append("interfaceReason", formData.interfaceReason.join(', '));
+  data.append("problemsCamera", formData.problemsCamera.join(', '));
+  data.append("problemsBattery", formData.problemsBattery.join(', '));
+  data.append("problemsMemory", formData.problemsMemory.join(', '));
+  data.append("problemsPerformance", formData.problemsPerformance.join(', '));
+  data.append("problemsInterface", formData.problemsInterface.join(', '));
   data.append("screenReason", formData.screenReason.join(', '));
 
   data.append("problemsPhone", formData.problemsPhone.join(', '));
-  data.append("negativeLife", formData.negativeLife.join(', '));
-  data.append("likeSamsung", formData.likeSamsung.join(', '));
-  data.append("improvePhone", formData.improvePhone.join(', '));
+  data.append("negativeInfluence", formData.negativeInfluence.join(', '));
+  data.append("highRatingReason", formData.highRatingReason.join(', '));
+  data.append("improvement", formData.improvement.join(', '));
   data.append("age", formData.age);
   data.append("city", formData.city);
-  data.append("martialStatus", formData.martialStatus);
-  data.append("familySituation", formData.familySituation);
-  data.append("wantInformation", formData.wantInformation);
-  data.append("informationTime", formData.informationTime);
+  data.append("maritalStatus", formData.maritalStatus);
+  data.append("income", formData.income);
+  data.append("subscribe", formData.subscribe);
+  data.append("subscribeTime", formData.subscribeTime);
   data.append("present", formData.present);
+  data.append('locale', "kz_ru")
 
   data.append('name', name.value)
   data.append('phone', phone.value)
   data.append('email', email.value)
-  data.append("formKey", "VhxtIukFTLAxciHB");
-  // fetch("//api.sece.kz", {
-  //   method: "POST",
-  //   mode: "no-cors",
-  //   headers: {
-  //     "Access-Control-Allow-Origin": "*",
-  //   },
-  //   body: data,
-  // });
+  data.append("formKey", "JQqM0gSScTVEn7bO");
+  fetch("//api.sece.kz", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    body: data,
+  });
 }
 
 function nextquestion() {
@@ -791,6 +792,7 @@ questionsContainer.addEventListener("click", (e) => {
 });
 
 const form = document.querySelector('.form-form');
+const sectionForm = document.querySelector('.section-form')
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const phone = document.querySelector('#phone');
@@ -798,7 +800,7 @@ const phone = document.querySelector('#phone');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   validateInputs();
-  form.classList.add('none')
+  sectionForm.classList.add('none')
   questionsContainer.classList.remove('none')
 })
 
