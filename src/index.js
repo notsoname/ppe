@@ -885,7 +885,8 @@ const isValidName = name => {
   return re.test(String(name).toLowerCase());
 }
 const isValidPhone = phone => {
-  return phone.length == 0 ? false : true 
+  console.log(phone.length)
+  return phone.length != 17 ? false : true 
 }
 const validateInputs = () => {
   const emailValue = email.value.trim();
