@@ -77,6 +77,13 @@ p {
   }
 }
 
+input {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0px 1000px transparent inset;
+  }
+}
+
 .section {
   padding: 0;
   position: relative;
@@ -352,36 +359,6 @@ p {
   }
 }
 
-.header {
-  background-image: url("https://images.samsung.com/is/image/samsung/assets/kz_ru/offer/survey-multidevice-experience/bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 640px;
-  color: #ffffff;
-  &-wrapper {
-    padding-left: 142px;
-    color: #ffffff;
-    width: 100%;
-  }
-  &-header {
-    max-width: 684px;
-    margin-top: 173px;
-  }
-  &-subheader {
-    font-weight: 400;
-    max-width: 684px;
-    margin-top: 16px;
-    font-family: $font_family_normal;
-    line-height: 24px;
-  }
-  &-linksWrapper {
-    margin-top: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
-
 .survey {
   &-wrapper {
     margin-top: 40px;
@@ -412,32 +389,6 @@ p {
     font-size: 14px;
     width: 376px;
     height: 30px;
-  }
-  &-devicesQ {
-    margin-top: 40px;
-    width: 800px;
-    height: 297px;
-    padding: 44px 56px;
-    border-radius: 16px;
-    background-color: #f7f7f7;
-    &_question {
-      margin-top: 24px;
-    }
-    &_question2 {
-      margin-top: 24px;
-      font-size: 18px;
-      font-weight: 400;
-    }
-  }
-  &-devices {
-    &_blockMain {
-      margin-top: 16px;
-      width: 800px;
-      height: 944px;
-      padding: 44px 56px;
-      border-radius: 16px;
-      background-color: #f7f7f7;
-    }
   }
   &-labels {
     margin-top: 16px;
@@ -568,6 +519,7 @@ input[type="checkbox"]:checked + .option:before {
   border: 1px solid black;
 }
 
+
 .none {
   display: none !important;
 }
@@ -610,12 +562,6 @@ input[type="checkbox"]:checked + .option:before {
   }
 }
 
-input[type="text"] {
-  &:focus {
-    border: 1px solid blue !important;
-  }
-}
-
 #city-selector {
   border-radius: 6px;
   padding: 16px 24px;
@@ -642,9 +588,11 @@ input[type="text"] {
   margin-top: 3px;
 }
 
+.label-name {
+  margin-top: 24px;
+  position: relative;
+}
 .form {
-  padding-top: 44px;
-  margin-top: 40px;
   display: flex;
   flex-direction: column; 
   align-items: baseline;
@@ -652,33 +600,42 @@ input[type="text"] {
   width: 896px;
   padding: 44px 56px;
   border-radius: 16px;
-  &-subheader {
-    font-weight: normal;
-    text-align: center;
-  }
-  &-header {
-    text-align: center;
-    margin-bottom: 16px;
-  }
+  margin: 0 auto;
   &-input {
     border: none;
     border-bottom: 1px solid gray;
-    height: 54px;
-    background-color: #F7F7F7;
-    font-size: 18px;
+    height: 32px;
+    background-color: transparent;
+    font-size: 14px;
     width: 384px;
+    padding-bottom: 8px;
     &:nth-child(1) {
       margin-right: 10px;
     }
     &:focus {
+      box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
       border-bottom: 2px solid #2189FF;
+      & + .form-name {
+        transition: transform 150ms cubic-bezier(.4,0,.2,1);
+        transform: translate(0, -150%);
+        font-size: 12px;
+        left: 0;
+        color: #2189FF;
+      }
+    }
+    &:valid + .form-name {
+      transition: transform 150ms cubic-bezier(.4,0,.2,1);
+      transform: translate(0, -150%);
+      font-size: 12px;
+      left: 0;
     }
   }
     &-btn {
       margin-top: 24px;
     }
   &-inputs {
-    margin-top: 16px;
+    display: flex;
   }
   &-checkboxWrapper {
     margin-top: 24px;
@@ -693,10 +650,32 @@ input[type="text"] {
       }
     }
   }
+  &-name {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #555555;
+  }
 }
 
+.message {
+  &-error {
+    display: none;
+  }
+}
+.error {
+  display: block;
+}
 .incorrect {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #E03030;
+  & + .form-name {
+    transition: transform 150ms cubic-bezier(.4,0,.2,1);
+    transform: translate(0, -150%);
+    font-size: 12px;
+    color: #E03030;
+  }
 }
 
 .q18,
@@ -711,6 +690,10 @@ input[type="text"] {
     border-bottom: 2px solid #2189FF;
   }
 }
+
+
+
+
 
 @import "./main_mob";
 @import "./media";

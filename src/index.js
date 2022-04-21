@@ -1,6 +1,4 @@
 import "./styles/index.scss";
-let platform = require('platform')
-
 
 const questions = [
   {
@@ -25,68 +23,22 @@ const questions = [
   },
   {
     question: "Почему Вы снизили оценку?",
-    options: ["Не понравились технические особенности", "Есть трудности в процессе взаимодействия со смартфоном", "Пользование смартфоном порой негативно влияет на мою жизнь"],
+    options: [
+        "Не понравилась камера", 
+        "Не устраивает производительность телефона", 
+        "Возникали сложности, связанные с интерфейсом",
+        "Не устраивает экран",
+        "Были трудности в процессе взаимодействия со смартфоном"
+        ],
     name: "lowRatingReason",
     ratings: [],
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["badTech", "difficultInteract", "negativeExperience"]
+    omni: [""]
   },
   {
-    question: "Какая из технических особенностей не оправдала ваши ожидания?",
-    options: [
-      "Камера",
-      "Батарея",
-      "Память",
-      "Производительность",
-      "Интерфейс",
-      "Экран"
-    ],
-    name: "technicalFeatures",
-    ratings: [],
-    type: "checkbox",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["camera", "battery", "memory", "performance", "interface", "screen"]
-  },
-  {
-    question:
-      "С какими трудностями или неудобными моментами Вы столкнулись при взаимодействии с телефоном?",
-    options: [
-      "Непонятный интерфейс", 
-      "Недостаточно памяти", 
-      "Не знаю как перенести данные на компьютер", 
-      "Не знаю как оградить ребенка от вредного контента", 
-      "Не знаю как обезопасить свои данные", 
-      "Отвлекающие уведомления в процессе игр", 
-      "Неудобно выполнять связанные с работой задачи", 
-      "Боюсь не вернуть телефон в случае потери или кражи"],
-    name: "problemsPhone",
-    ratings: [],
-    type: "checkbox",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["incomprehensibleInterface", "notEnoughMemory", "dontknowDataToPC", "protectChild", "saveData", "distractingNotifications", "difficultWorkTask", "stealProblems"],
-  },
-  {
-    question:
-      "Каким образом телефон негативно влияет на вашу жизнь?",
-    options: [
-      "Я стал слишком много времени тратить на телефон",
-      "Я отвлекаюсь на уведомления и мне трудно сосредоточиться ",
-      "У меня устают глаза после длительного пользования смартфоном",
-      "У меня бессонница после длительного пользования смартфоном вечером",
-    ],
-    ratings: [],
-    name: "negativeInfluence",
-    type: "checkbox",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["wasteTime", "distractingNotifications", "tiredEyes", "insomnia"]
-  },
-  {
-    question: "Что именно вам не нравится в камере?",
+    question: "Что именно вам не нравится в КАМЕРЕ?",
     options: [
       "Фотографии нечеткие, размытые",
       "Недостаточно насыщенные цвета фотографий",
@@ -97,110 +49,89 @@ const questions = [
       "Чтобы сделать нужный снимок, приходится много раз фотографировать",
       "Не знаю как включить стабилизацию видео",
       "Не знаю как использовать функции для монтажа видео",
+      "Ничего из перечисленного"
     ],
     ratings: [],
     name: "problemsCamera",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["fuzzyPhoto", "desaturatedСolors", "tooMuchLight", "badNightShooting", "badColor", "tooManyPhotos", "dontKnowStabilization", "dontknowVideoEditing"]
-  },
-  {
-    question: "Что именно вам не нравится в батарее телефона?",
-    options: [
-      "Слишком быстро разряжается",
-      "Телефон греется во время зарядки",
-      "Раздражает необходимость заряжать телефон, часы и наушники",
-    ],
-    name: "problemsBattery",
-    ratings: [],
-    type: "checkbox",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["dischargesQuickly", "heatsCharging", "needToCharge"]
+    omni: []
   },
   {
     question:
-      "Какие проблемы с памятью телефона у вас возникали?",
-    options: [
-      "Слишком быстро заполняется",
-      "Объема памяти телефона недостаточно ",
-      "Не знаю как найти сохраненный файл",
-      "Не знаю как подключить облачное хранилище",
-    ],
-    name: "problemsMemory",
-    ratings: [],
-    type: "checkbox",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["memoryFillsFast", "notEnoghtMemory", "dontknowfindFile", "dontknowConnectCloudStorage"]
-  },
-  {
-    question:
-      "Что вам не нравится в производительности телефона?",
+      "Что вам не нравится в ПРОИЗВОДИТЕЛЬНОСТИ телефона?",
     options: [
       "Приложения открываются с задержкой",
-      "Не могу работать в двух и более приложениях одновременно",
       "Приложения зависают во время работы",
       "Телефон перезагружается самостоятельно",
       "Подвисают игры / видео",
+      "Ничего из перечисленного"
     ],
     name: "problemsPerformance",
     type: "checkbox",
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["lagging", "cannotuseTwoOrMoreApp", "freeze", "reload", "laggingWhileGameOrVideo"]
+    omni: []
   },
   {
     question:
-      "Какие сложности, связанные с интерфейсом, у вас возникали?",
+      "Какие сложности, связанные с ИНТЕРФЕЙСОМ, у вас возникали?",
     options: [
       "Сложно разобраться, что и где находится",
       "Непривычное расположение кнопок, команд",
       "Не знаю куда сохраняются мои файлы",
+      "Не знаю как найти сохраненный файл",
       "Не нравится дизайн иконок приложений",
       "Не знаю как настроить телефон под мои предпочтения",
       'Не знаю как пользоваться "двойным экраном"',
       "Неприятно вечером смотреть на яркий экран",
-      "",
+      "Ничего из перечисленного"
     ],
     name: "problemsInterface",
     type: "checkbox",
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["difficultFindWhere", 
-      "unusualBtnLayot", 
-      "dontlikeIconDesignApp", 
-      "dontknowCustomizePhone", 
-      "dontknowUseDoubleScreen", 
-      "unpleasantLookBrightScreen"
-    ]
+    omni: []
   },
   {
     question:
-      "Что разочаровало вас в экране смартфона?",
+      "Что разочаровало вас в ЭКРАНЕ смартфона?",
     options: [
       "Качество картинки не совпало с ожидаемым",
-      "Не знаю как настроить экран так, чтобы он был удобен для меня",
       "Слишком яркий экран, глаза устают от долгого просмотра",
       "Не могу управлять смартфоном одной рукой",
       "Недостаточно яркий экран",
-      "",
-      ""
+      "Ничего из перечисленного",
     ],
     name: "problemsScreen",
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
     ratings: [],
-    omni: ["picturesQuality", 
-      "dontknowCustomizeScreen", 
-      "tooBright", 
-      "cantUseOneHand", 
-      "notBrightScreen"
+    omni: [
     ]
+  },
+  {
+    question:
+      "С какими трудностями или неудобными моментами Вы столкнулись при ВЗАИМОДЕЙСТВИИ с телефоном?",
+    options: [
+      "Недостаточно памяти", 
+      "Не знаю как оградить ребенка от вредного контента", 
+      "Не знаю как обезопасить свои данные", 
+      "Отвлекающие уведомления во время работы или в процессе игр", 
+      "Неудобно выполнять связанные с работой задачи", 
+      "Боюсь не вернуть телефон в случае потери или кражи", 
+      "Слишком быстро разряжается", 
+      "Ничего из перечисленного"],
+    name: "problemsPhone",
+    ratings: [],
+    type: "checkbox",
+    class: "radio checkbox",
+    classwrapper: "form-control",
+    omni: [],
   },
   {
     question:
@@ -214,7 +145,8 @@ const questions = [
       "Удобно держать в руке",
       "Звук",
       "Бренд",
-      "Возможность складывать телефон в компактный размер",
+      "Интерфейс",
+      "Экран"
     ],
     ratings: [],
     name: "highRatingReason",
@@ -235,13 +167,15 @@ const questions = [
   {
     question: "Что вам хотелось бы улучшить в этом смартфоне?",
     options: [
-      "Батарею",
-      "Экран",
-      "Внешний вид",
-      "Процессор",
-      "Аудиосистему",
+      "Камера",
+      "Батарея",
+      "Производительность",
       "Память",
-      "Камеру",
+      "Дизайн",
+      "Аудиосистема",
+      "Интерфейс",
+      "Экран",
+      "Ничего из перечисленного",
     ],
     name: "improvement",
     ratings: [],
@@ -277,37 +211,6 @@ const questions = [
     omni: ["choosed city"]
   },
   {
-    question: "Ваше семейное положение",
-    options: [
-      "Живу один (одна)",
-      "Женат / замужем / гражданский брак",
-    ],
-    name: "maritalStatus",
-    ratings: [],
-    type: "radio",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["single", "married"]
-  },
-  {
-    question:
-      "Какое высказывание наилучшим образом описывает положение Вашей семьи?",
-    options: [
-      "Нам не всегда хватает денег даже на еду",
-      "У нас достаточно денег на еду, но купить одежду для нас серьезная проблема",
-      "Нам хватает на еду, одежду и мелкую бытовую технику, но купить телевизор, холодильник или стиральную машину нам будет сложно ",
-      "Мы можем купить основную бытовую технику, но на машину нам не хватит ",
-      "Нам хватит денег на все, включая машину, кроме таких дорогих приобретений, как квартира или загородный дом",
-      "У нас нет никаких финансовых затруднений. При необходимости мы можем купить квартиру или дом",
-    ],
-    ratings: [],
-    name: "income",
-    type: "radio",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["no money", "no clothes", "no tv", "no car", "no home", "have home"]
-  },
-  {
     question:
       "Какую информацию Вы хотели бы получать от Samsung?",
     options: [
@@ -336,29 +239,6 @@ const questions = [
   },
   {
     question:
-      "Как часто вам было бы удобно получать информацию, отмеченную Вами выше?",
-    options: [
-      "1 раз в неделю",
-      "1 раз в 2 недели",
-      "1 раз в месяц",
-      "1 раз в 2 месяца",
-      "1 раз в квартал",
-      "Другое <input class='q19' placeholder='Впишите'>",
-    ],
-    ratings: [],
-    name: "subscribeTime",
-    type: "radio",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["onceweek",
-      "1TimeIn2Week",
-      "1Timepermonth",
-      "1Timein2Month",
-      "1TimePerQuarter"
-    ]
-  },
-  {
-    question:
       "Что бы вы хотели получить в подарок, покупая новый смартфон?",
     options: [
       "Запишите <input class='q20' placeholder='Впишите'>",
@@ -374,69 +254,16 @@ const questions = [
     question: "Спасибо за участие",
     options: "",
   },
-  {
-    question:
-      "Какие сложности, связанные с интерфейсом, у вас возникали?",
-    options: [
-      "Сложно разобраться, что и где находится",
-      "Непривычное расположение кнопок, команд",
-      "Не знаю куда сохраняются мои файлы",
-      "Не нравится дизайн иконок приложений",
-      "Не знаю как настроить телефон под мои предпочтения",
-      'Не знаю как пользоваться "двойным экраном"',
-      "Неудобно смотреть сториз в Инстаграм",
-      "Неприятно вечером смотреть на яркий экран"
-    ],
-    name: "problemsInterface",
-    type: "checkbox",
-    ratings: [],
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    omni: ["difficultFindWhere", 
-      "unusualBtnLayot", 
-      "dontlikeIconDesignApp", 
-      "dontknowCustomizePhone", 
-      "dontknowUseDoubleScreen", 
-      "uncomfortableLookStoriesInst",
-      "unpleasantLookBrightScreen"
-    ]
-  },
-  {
-    question:
-      "Что разочаровало вас в экране смартфона?",
-    options: [
-      "В разложенном виде видна полоса",
-      "Экран в сложенном виде оказался небольшим ",
-      "Качество картинки не совпало с ожидаемым",
-      "Не знаю как настроить экран так, чтобы он был удобен для меня",
-      "Слишком яркий экран, глаза устают от долгого просмотра",
-      "Не могу управлять смартфоном одной рукой",
-      "Недостаточно яркий экран"
-    ],
-    name: "problemsScreen",
-    type: "checkbox",
-    class: "radio checkbox",
-    classwrapper: "form-control",
-    ratings: [],
-    omni: [
-      "unfoledLine",
-      "foledSmall",
-      "picturesQuality", 
-      "dontknowCustomizeScreen", 
-      "tooBright", 
-      "cantUseOneHand", 
-      "notBrightScreen"
-    ]
-  },
 ];
 const questionsContainer = document.querySelector(".survey-wrapper");
+const surveyContainer = document.querySelector('.section-survey')
 let questionNumber = 0;
 let surveyQuestionNumber = 0;
 
 function loadQuestions() {
   for (let i = questionNumber; i < questions.length; i++) {
     questionsContainer.innerHTML = `
-      <h4 class="survey-questionNumber">Вопрос ${surveyQuestionNumber + 1}/${questions.length - 3}</h4>
+      <h4 class="survey-questionNumber">Вопрос ${surveyQuestionNumber + 1}/${questions.length - 1}</h4>
       <div class="survey-question">${questions[questionNumber].question}</div>
       <div class="survey-questions">
       </div>
@@ -453,130 +280,78 @@ function createOptions() {
       const block = `
       <img src="https://images.samsung.com/is/image/samsung/assets/kz_ru/offer/survey-multidevice-experience/select.png" alt="select" class="selectImg"></img>
       <select id="city-selector" name="form-city" class='radio' required>
-  <option value="" selected data-default="true">Выберите из списка</option>
-  <option value="Нур-Султан">Нур-Султан</option>
-  <option value="Алматы">Алматы</option>
-  <option value="Аксай">Аксай</option>
-  <option value="Аксу">Аксу</option>
-  <option value="Аксукент">Аксукент</option>
-  <option value="Актау">Актау</option>
-  <option value="Актобе">Актобе</option>
-  <option value="Алтай (бывш. Зыряновск)">Алтай (бывш. Зыряновск)</option>
-  <option value="Аральск">Аральск</option>
-  <option value="Арыс">Арыс</option>
-  <option value="Атырау">Атырау</option>
-  <option value="Балхаш">Балхаш</option>
-  <option value="Есик">Есик</option>
-  <option value="Жанаозен">Жанаозен</option>
-  <option value="Жаркент">Жаркент</option>
-  <option value="Жезказган">Жезказган</option>
-  <option value="Жетысай">Жетысай</option>
-  <option value="Житикара">Житикара</option>
-  <option value="Кандыагаш">Кандыагаш</option>
-  <option value="Капшагай">Капшагай</option>
-  <option value="Караганда">Караганда</option>
-  <option value="Каскелен">Каскелен</option>
-  <option value="Кокшетау">Кокшетау</option>
-  <option value="Костанай">Костанай</option>
-  <option value="Кульсары">Кульсары</option>
-  <option value="Кызылорда">Кызылорда</option>
-  <option value="Ленгер">Ленгер</option>
-  <option value="Макинск">Макинск</option>
-  <option value="Павлодар">Павлодар</option>
-  <option value="Петропавловск">Петропавловск</option>
-  <option value="Риддер">Риддер</option>
-  <option value="Сарыагаш">Сарыагаш</option>
-  <option value="Семей">Семей</option>
-  <option value="Степногорск">Степногорск</option>
-  <option value="Талгар">Талгар</option>
-  <option value="Талдыкурган">Талдыкурган</option>
-  <option value="Тараз">Тараз</option>
-  <option value="Темиртау">Темиртау</option>
-  <option value="Туркестан">Туркестан</option>
-  <option value="Уральск">Уральск</option>
-  <option value="Усть-Каменогорск">Усть-Каменогорск</option>
-  <option value="Хромтау">Хромтау</option>
-  <option value="Шар">Шар</option>
-  <option value="Шахтинск">Шахтинск</option>
-  <option value="Шиели">Шиели</option>
-  <option value="Шымкент">Шымкент</option>
-  <option value="Экибастуз">Экибастуз</option>
-  <option value="other">Другой город</option>
-</select>
-      `;
-      surveyQuestions.insertAdjacentHTML("beforeend", block);
-    } else if (questions[questionNumber].name == 'problemsInterface' 
-        && (platform.product == 'SM-F926B' 
-        || platform.product == 'SM-F926U'
-        || platform.product == 'SM-F926U1'
-        || platform.product == 'SM-G955U' 
-        || platform.product == 'SM-F900F'
-        || platform.product == 'SM-F900U1'
-        || platform.product == 'SM-F9000'
-        || platform.product == 'SM-F900W'
-        || platform.product == 'SM-F916B'
-        || platform.product == 'SM-F916U'
-        || platform.product == 'SM-F916N'
-        || platform.product == 'SM-F9160'
-    )) {
-      let block;
-      block = `
-      <label class="${questions[22].classwrapper}">
-        <input data-omni-type="microsite" data-omni="${questions[22].omni[i]}" required type="${questions[22].type}" data-ratings=${questions[22].ratings[i]} name="${questions[22].name}" value="${questions[22].options[i]}" class="${questions[22].class}" />
-        <div class="option"><div class='option2'>${questions[22].options[i]}</div></div>
-      </label>
-      `;
-      surveyQuestions.insertAdjacentHTML("beforeend", block);
-    } else if (questions[questionNumber].name == 'problemsScreen' 
-        && (platform.product == 'SM-F711B'
-        || platform.product == "SM-F707B"
-        || platform.product == "SM-F707U"
-        || platform.product == "SM-F707U1"
-        || platform.product == "SM-F707UN"
-        || platform.product == "SM-F707U0"
-        || platform.product == "SM-F707U0Q"
-        || platform.product == "SM-F707U0W"
-        || platform.product == "SM-F711B"
-        || platform.product == "SM-F711U"
-        || platform.product == "SM-F711U1"
-        || platform.product == 'SM-F926B'  
-        || platform.product == 'SM-F926U'
-        || platform.product == 'SM-F926U1'
-        || platform.product == 'SM-G955U' 
-        || platform.product == 'SM-F900F'
-        || platform.product == 'SM-F900U1'
-        || platform.product == 'SM-F9000'
-        || platform.product == 'SM-F900W'
-        || platform.product == 'SM-F916B'
-        || platform.product == 'SM-F916U'
-        || platform.product == 'SM-F916N'
-        || platform.product == 'SM-F9160'
-
-    )) {
-      let block;
-      block = `
-      <label class="${questions[23].classwrapper}">
-        <input data-omni-type="microsite" data-omni="${questions[23].omni[i]}" required type="${questions[23].type}" data-ratings=${questions[23].ratings[i]} name="${questions[23].name}" value="${questions[23].options[i]}" class="${questions[23].class}"/>
-        <div class="option"><div class='option2'>${questions[23].options[i]}</div></div>
-      </label>
+        <option value="" selected data-default="true">Выберите из списка</option>
+        <option value="Нур-Султан">Нур-Султан</option>
+        <option value="Алматы">Алматы</option>
+        <option value="Аксай">Аксай</option>
+        <option value="Аксу">Аксу</option>
+        <option value="Аксукент">Аксукент</option>
+        <option value="Актау">Актау</option>
+        <option value="Актобе">Актобе</option>
+        <option value="Алтай (бывш. Зыряновск)">Алтай (бывш. Зыряновск)</option>
+        <option value="Аральск">Аральск</option>
+        <option value="Арыс">Арыс</option>
+        <option value="Атырау">Атырау</option>
+        <option value="Балхаш">Балхаш</option>
+        <option value="Есик">Есик</option>
+        <option value="Жанаозен">Жанаозен</option>
+        <option value="Жаркент">Жаркент</option>
+        <option value="Жезказган">Жезказган</option>
+        <option value="Жетысай">Жетысай</option>
+        <option value="Житикара">Житикара</option>
+        <option value="Кандыагаш">Кандыагаш</option>
+        <option value="Капшагай">Капшагай</option>
+        <option value="Караганда">Караганда</option>
+        <option value="Каскелен">Каскелен</option>
+        <option value="Кокшетау">Кокшетау</option>
+        <option value="Костанай">Костанай</option>
+        <option value="Кульсары">Кульсары</option>
+        <option value="Кызылорда">Кызылорда</option>
+        <option value="Ленгер">Ленгер</option>
+        <option value="Макинск">Макинск</option>
+        <option value="Павлодар">Павлодар</option>
+        <option value="Петропавловск">Петропавловск</option>
+        <option value="Риддер">Риддер</option>
+        <option value="Сарыагаш">Сарыагаш</option>
+        <option value="Семей">Семей</option>
+        <option value="Степногорск">Степногорск</option>
+        <option value="Талгар">Талгар</option>
+        <option value="Талдыкурган">Талдыкурган</option>
+        <option value="Тараз">Тараз</option>
+        <option value="Темиртау">Темиртау</option>
+        <option value="Туркестан">Туркестан</option>
+        <option value="Уральск">Уральск</option>
+        <option value="Усть-Каменогорск">Усть-Каменогорск</option>
+        <option value="Хромтау">Хромтау</option>
+        <option value="Шар">Шар</option>
+        <option value="Шахтинск">Шахтинск</option>
+        <option value="Шиели">Шиели</option>
+        <option value="Шымкент">Шымкент</option>
+        <option value="Экибастуз">Экибастуз</option>
+        <option value="other">Другой город</option>
+      </select>
       `;
       surveyQuestions.insertAdjacentHTML("beforeend", block);
     } else {
       let block;
-      if (questions[questionNumber].options[i] == '') {
-        block = ''
-        return
-      }
       block = `
       <label class="${questions[questionNumber].classwrapper}">
         <input data-omni-type="microsite" data-omni="${questions[questionNumber].omni[i]}" required type="${questions[questionNumber].type}" data-ratings=${questions[questionNumber].ratings[i]} name="${questions[questionNumber].name}" value="${questions[questionNumber].options[i]}" class="${questions[questionNumber].class}"/>
         <div class="option"><div class='option2'>${questions[questionNumber].options[i]}</div></div>
       </label>
       `;
+      if ( questions[questionNumber].options[i] == "Ничего из перечисленного") {
+        block = `
+        <label class="${questions[questionNumber].classwrapper}">
+          <input data-omni-type="microsite" data-omni="${questions[questionNumber].omni[i]}" required type="${questions[questionNumber].type}" name="${questions[questionNumber].name}" value="${questions[questionNumber].options[i]}" class="radio unselect" />
+          <div class="option"><div class='option2'>${questions[questionNumber].options[i]}</div></div>
+        </label>
+        `;
+      }
       surveyQuestions.insertAdjacentHTML("beforeend", block);
     }
   }
-  if (questionNumber == 21) {
+  if (questionNumber == 14) {
     questionsContainer.innerHTML = `<h4 class="thankyou">Cпасибо за ваши ответы!</h4>`
   }
 }
@@ -585,15 +360,12 @@ loadQuestions();
 const formData = {
   simple: [],
   lowRatingReason: [],
-  technicalFeatures: [],
   problemsCamera: [],
-  problemsBattery: [],
   problemsMemory: [],
   problemsPerformance: [],
   problemsInterface: [],
   problemsScreen: [],
   improvement: [],
-  negativeInfluence: [],
   problemsPhone: [],
   highRatingReason: [],
   age: [],
@@ -601,9 +373,9 @@ const formData = {
   maritalStatus: [],
   income: [],
   subscribe: [],
-  subscribeTime: [],
   present: []
 };
+
 
 function pushToData() {
   const radios = document.querySelectorAll(".radio");
@@ -612,20 +384,11 @@ function pushToData() {
       if (radios[i].name == 'lowRatingReason') {
         formData.lowRatingReason.push(radios[i].value)
       }
-      if (radios[i].name == 'technicalFeatures') {
-        formData.technicalFeatures.push(radios[i].value)
-      }
-      if (radios[i].name == 'negativeInfluence') {
-        formData.negativeInfluence.push(radios[i].value)
-      }
       if (radios[i].name == 'problemsPhone') {
         formData.problemsPhone.push(radios[i].value)
       }
       if (radios[i].name == 'problemsCamera') {
         formData.problemsCamera.push(radios[i].value)
-      }
-      if (radios[i].name == 'problemsBattery') {
-        formData.problemsBattery.push(radios[i].value)
       }
       if (radios[i].name == 'problemsMemory') {
         formData.problemsMemory.push(radios[i].value)
@@ -660,12 +423,6 @@ function pushToData() {
         }
         formData.subscribe.push(radios[i].value)
       }
-      if (radios[i].name == 'subscribeTime') {
-        if (radios[i].value == "Другое <input class='q19' placeholder='Впишите'>") {
-          radios[i].value = document.querySelector('.q19').value
-        }
-        formData.subscribeTime.push(radios[i].value)
-      }
       if (radios[i].name == 'present') {
         if (radios[i].value == "Запишите <input class='q20' placeholder='Впишите'>") {
           radios[i].value = document.querySelector('.q20').value
@@ -682,18 +439,18 @@ function pushToData() {
 function rules() {
   if (questionNumber == 1) {
     if (formData.simple.includes('Нет')) {
-      questionNumber = 14
-      surveyQuestionNumber = 14
+      questionNumber = 10
+      surveyQuestionNumber = 10
     }
   }
 
   if (questionNumber == 2) {
     if (formData.simple.includes('10 - Точно буду рекомендовать')) {
-      questionNumber = 12
-      surveyQuestionNumber = 12
+      questionNumber = 8
+      surveyQuestionNumber = 8
     } else if (formData.simple.includes('9')) {
-      questionNumber = 12
-      surveyQuestionNumber = 12 
+      questionNumber = 8
+      surveyQuestionNumber = 8 
     } else {
       questionNumber = 2
       surveyQuestionNumber = 2
@@ -701,70 +458,40 @@ function rules() {
   }
 
   if (questionNumber == 3) {
-    if (!formData.lowRatingReason.includes('Не понравились технические особенности') && formData.simple.includes('Есть трудности в процессе взаимодействия со смартфоном')) {
+    if (!formData.lowRatingReason.includes("Не понравилась камера")) {
       questionNumber = 4
-    } else if (formData.lowRatingReason.includes('Не понравились технические особенности')) {
-      questionNumber = 3
-    } else if (!formData.lowRatingReason.includes('Не понравились технические особенности') && formData.simple.includes('Пользование смартфоном порой негативно влияет на мою жизнь')) {
-      questionNumber = 5
     }
   }
 
   if (questionNumber == 4) {
     surveyQuestionNumber = 4
-    if (!formData.simple.includes('Есть трудности в процессе взаимодействия со смартфоном')) {
+    if (!formData.simple.includes("Не устраивает производительность телефона")) {
       questionNumber = 5
     }
   }
 
   if (questionNumber == 5) {
     surveyQuestionNumber = 5
-    if (!formData.lowRatingReason.includes('Пользование смартфоном порой негативно влияет на мою жизнь')) {
+    if (!formData.lowRatingReason.includes("Возникали сложности, связанные с интерфейсом")) {
       questionNumber = 6
     }
   }
 
   if (questionNumber == 6) {
     surveyQuestionNumber = 6
-    if (!formData.technicalFeatures.includes('Камера')) {
+    if (!formData.lowRatingReason.includes("Не устраивает экран")) {
       questionNumber = 7
     }
   }
   if (questionNumber == 7) {
     surveyQuestionNumber = 7
-    if (!formData.technicalFeatures.includes('Батарея')) {
+    if (!formData.lowRatingReason.includes("Были трудности в процессе взаимодействия со смартфоном")) {
       questionNumber = 8
+      surveyQuestionNumber = 8
     }
   }
-  if (questionNumber == 8) {
-    surveyQuestionNumber = 8
-    if (!formData.technicalFeatures.includes('Память')) {
-      questionNumber = 9
-    }
-  }
-  if (questionNumber == 9) {
-    surveyQuestionNumber = 9
-    if (!formData.technicalFeatures.includes('Производительность')) {
-      questionNumber = 10
-    }
-  }
-  if (questionNumber == 10) {
-    surveyQuestionNumber = 10
-
-    if (!formData.technicalFeatures.includes('Интерфейс')) {
-      questionNumber = 11
-    }
-  }
-  if (questionNumber == 11) {
-    surveyQuestionNumber = 11
-    if (!formData.technicalFeatures.includes('Экран')) {
-      questionNumber = 12
-      surveyQuestionNumber = 12
-    }
-  }
-
-  if (questionNumber == 21) {
-    surveyQuestionNumber = 21
+  if (questionNumber == 14) {
+    surveyQuestionNumber = 14
     postDataForm()
   }
 }
@@ -774,24 +501,18 @@ function postDataForm() {
   data.append("usedSamsung", formData.simple[0] == "Да" ? '1' : '0')
   data.append("rating", formData.simple[1]);
   data.append("lowRatingReason", formData.lowRatingReason.join(', '));
-  data.append("technicalFeatures", formData.technicalFeatures.join(', '));
   data.append("problemsCamera", formData.problemsCamera.join(', '));
-  data.append("problemsBattery", formData.problemsBattery.join(', '));
   data.append("problemsMemory", formData.problemsMemory.join(', '));
   data.append("problemsPerformance", formData.problemsPerformance.join(', '));
   data.append("problemsInterface", formData.problemsInterface.join(', '));
   data.append("problemsScreen", formData.problemsScreen.join(', '));
 
   data.append("problemsPhone", formData.problemsPhone.join(', '));
-  data.append("negativeInfluence", formData.negativeInfluence.join(', '));
   data.append("highRatingReason", formData.highRatingReason.join(', '));
   data.append("improvement", formData.improvement.join(', '));
   data.append("age", formData.age);
   data.append("city", formData.city);
-  data.append("maritalStatus", formData.maritalStatus);
-  data.append("income", formData.income);
   data.append("subscribe", formData.subscribe);
-  data.append("subscribeTime", formData.subscribeTime);
   data.append("present", formData.present);
   data.append('locale', "kz_ru")
 
@@ -815,7 +536,7 @@ function nextquestion() {
   pushToData();
   rules();
   loadQuestions();
-  // console.log(formData)
+  console.log(formData)
 }
 
 questionsContainer.addEventListener("click", (e) => {
@@ -824,6 +545,22 @@ questionsContainer.addEventListener("click", (e) => {
     nextquestion();
   }
   const radios = document.querySelectorAll(".radio");
+  const checkboxes = document.querySelectorAll(".checkbox");
+  const unselect = document.querySelector(".unselect");
+  if (target.tagName == "INPUT") {
+    unselect &&
+      unselect.addEventListener("click", () => {
+        checkboxes.forEach((radio) =>
+          radio.addEventListener("click", () => {
+            unselect.checked = false;
+          })
+        );
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+      });
+  }
+
   if (target.tagName != "BUTTON") return;
 
   for (let i = 0, length = radios.length; i < length; i++) {
@@ -832,12 +569,6 @@ questionsContainer.addEventListener("click", (e) => {
       if (radios[i].value == "Другое <input class='q18' placeholder='Впишите'>") {
         if (document.querySelector('.q18').value == 0) {
           document.querySelector('.q18').style.borderBottom = "1px solid red";
-          return;
-        }
-      }
-      if (radios[i].value == "Другое <input class='q19' placeholder='Впишите'>") {
-        if (document.querySelector('.q19').value == 0) {
-          document.querySelector('.q19').style.borderBottom = "1px solid red";
           return;
         }
       }
@@ -873,7 +604,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   validateInputs();
   sectionForm.classList.add('none')
-  questionsContainer.classList.remove('none')
+  surveyContainer.classList.remove('none')
 })
 
 const isValidEmail = email => {
@@ -885,7 +616,6 @@ const isValidName = name => {
   return re.test(String(name).toLowerCase());
 }
 const isValidPhone = phone => {
-  console.log(phone.length)
   return phone.length != 17 ? false : true 
 }
 const validateInputs = () => {
@@ -973,4 +703,3 @@ phone.addEventListener("focus", mask, false);
 phone.addEventListener("blur", mask, false);
 phone.addEventListener("keydown", mask, false)
 
-// document.querySelector('.phone').innerHTML = platform.product

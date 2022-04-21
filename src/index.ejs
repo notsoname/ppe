@@ -21,7 +21,6 @@
               <a data-omni="<%= json.omni %>:goto:survey" data-omni-type="<%= json.microsite %>" href="#survey" class="btn btn-black">
                 <%= json.mainSurvey %>
               </a>
-              </a>
             </div>
           </div>
         </div>
@@ -31,39 +30,56 @@
       <div class="wrapper wrapper-center">
         <div class="col col-8">
           <div class="text-wrap">
-            <h2 class="form-header">
+            <h2 class="text-center">
               Пожалуйста, заполните ваши данные
             </h2>
-            <p class="form-subheader">
+            <p class="text-center">
               Ваши ответы очень важны для нас, чтобы мы могли и далее предоставлять вам первоклассный сервис
             </p>
           </div>
         </div>
+        <div class="col col-8">
+          <div class="text-wrap">
         <form class="form">
-          <h4 class="form-header">Анкета участника</h4>
-          <input
+          <h4>Анкета участника</h4>
+          <labe class="label-name">
+            <input
             class="form-input"
             required
             id="name"
+            autocomplete="off"
             type="text"
-            placeholder="ФИО"
           />
+            <span class="form-name">
+             ФИО
+            </span>
+          </labe>
           <div class="form-inputs">
-            <input
+            <label class="label-name">
+              <input
               class="form-input"
               required
               id="phone"
               type="text"
+              autocomplete="off"
               minlength="17"
-              placeholder="Телефон"
             />
-            <input
+            <span class="form-name">
+              Телефон
+             </span>
+            </label>
+            <label class="label-name">
+              <input
               class="form-input"
               required
+              autocomplete="off"
               id="email"
               type="email"
-              placeholder="Email"
-            />
+              />
+              <span class="form-name">
+                Email
+               </span>
+            </label>
           </div>
           <label class="form-control form-checkboxWrapper">
             <input
@@ -81,20 +97,24 @@
               </div>
             </div>
           </label>
-          <button
-            class="cta cta--contained cta--black form-btn"
+          <div class="btns">
+            <button
+            class="btn btn-black"
             data-omni-type="microtype"
             data-omni="<%= json.omni %>:submitform"
           >
             Отправить
           </button>
+          </div>
         </form>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="section section-survey">
+    <section class="section section-survey none">
       <div class="wrapper wrapper-center">
         <div class="col col-7">
-          <div class="survey-wrapper none"></div>
+          <div class="survey-wrapper "></div>
         </div>
       </div>
     </section>

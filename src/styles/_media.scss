@@ -28,22 +28,28 @@
 
   .main {
     &-header {
-      font-size: vw(24, $unitPxVw);
+      font-size: vw(26, $unitPxVw);
     }
     &-subheader {
       font-size: vw(18, $unitPxVw);
       max-width: vw(285, $unitPxVw);
     }
   }
-
+  .label-name {
+    width: 100%;
+    margin-top: vw(24, $unitPxVw);
+  }
   .form {
     &-subheader {
       font-size: vw(18, $unitPxVw);
     }
-    margin-top: vw(24, $unitPxVw);
     width: vw(312, $unitPxVw);
     padding: vw(24, $unitPxVw);
     &-input {
+      width: 100%;
+    }
+    &-inputs {
+      flex-direction: column;
       width: 100%;
     }
     &-rules {
@@ -51,6 +57,12 @@
     }
     &-checkbox-text {
       font-size: vw(14, $unitPxVw);
+    }
+    &:focus + .form-name {
+      font-size: vw(14, $unitPxVw);
+    }
+    &-name {
+      font-size: vw(18, $unitPxVw);
     }
   }
   .option {
