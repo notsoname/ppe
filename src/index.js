@@ -125,7 +125,8 @@ const questions = [
       "Неудобно выполнять связанные с работой задачи", 
       "Боюсь не вернуть телефон в случае потери или кражи", 
       "Слишком быстро разряжается", 
-      "Ничего из перечисленного"],
+      "Ничего из перечисленного"
+    ],
     name: "problemsPhone",
     ratings: [],
     type: "checkbox",
@@ -193,13 +194,25 @@ const questions = [
   },
   {
     question: "Ваш возраст?",
-    options: ["18-24", "25-34", "35-44", "45-54", "55-64", "65 и выше"],
+    options: ["18-24", 
+      "25-34", 
+      "35-44", 
+      "45-54", 
+      "55-64", 
+      "65 и выше"
+    ],
     name: "age",
     type: "radio",
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["18-24", "25-34", "35-44", "45-54", "55-64", "65 and above"],
+    omni: ["18-24", 
+      "25-34", 
+      "35-44", 
+      "45-54", 
+      "55-64", 
+      "65 and above"
+    ],
   },
   {
     question: "В каком городе вы живете?",
@@ -207,8 +220,8 @@ const questions = [
     name: "city",
     ratings: [],
     type: "select",
-    class: "radio survey-textInput",
-    omni: ["choosed city"]
+    class: "radio",
+    omni: ["choosedCity"]
   },
   {
     question:
@@ -256,7 +269,7 @@ const questions = [
   },
 ];
 const questionsContainer = document.querySelector(".survey-wrapper");
-const surveyContainer = document.querySelector('.section-survey')
+const surveyContainer = document.querySelector(".section-survey")
 let questionNumber = 0;
 let surveyQuestionNumber = 0;
 
@@ -352,7 +365,7 @@ function createOptions() {
     }
   }
   if (questionNumber == 14) {
-    questionsContainer.innerHTML = `<h4 class="thankyou">Cпасибо за ваши ответы!</h4>`
+    questionsContainer.innerHTML = `<h4 class="text-center">Cпасибо за ваши ответы!</h4>`
   }
 }
 loadQuestions();
@@ -361,7 +374,6 @@ const formData = {
   simple: [],
   lowRatingReason: [],
   problemsCamera: [],
-  problemsMemory: [],
   problemsPerformance: [],
   problemsInterface: [],
   problemsScreen: [],
@@ -371,7 +383,6 @@ const formData = {
   age: [],
   city: [],
   maritalStatus: [],
-  income: [],
   subscribe: [],
   present: []
 };
@@ -389,9 +400,6 @@ function pushToData() {
       }
       if (radios[i].name == 'problemsCamera') {
         formData.problemsCamera.push(radios[i].value)
-      }
-      if (radios[i].name == 'problemsMemory') {
-        formData.problemsMemory.push(radios[i].value)
       }
       if (radios[i].name == 'problemsPerformance') {
         formData.problemsPerformance.push(radios[i].value)
@@ -413,9 +421,6 @@ function pushToData() {
       }
       if (radios[i].name == 'maritalStatus') {
         formData.maritalStatus.push(radios[i].value)
-      }
-      if (radios[i].name == 'income') {
-        formData.income.push(radios[i].value)
       }
       if (radios[i].name == 'subscribe') {
         if (radios[i].value == "Другое <input class='q18' placeholder='Впишите'>") {
@@ -502,11 +507,9 @@ function postDataForm() {
   data.append("rating", formData.simple[1]);
   data.append("lowRatingReason", formData.lowRatingReason.join(', '));
   data.append("problemsCamera", formData.problemsCamera.join(', '));
-  data.append("problemsMemory", formData.problemsMemory.join(', '));
   data.append("problemsPerformance", formData.problemsPerformance.join(', '));
   data.append("problemsInterface", formData.problemsInterface.join(', '));
   data.append("problemsScreen", formData.problemsScreen.join(', '));
-
   data.append("problemsPhone", formData.problemsPhone.join(', '));
   data.append("highRatingReason", formData.highRatingReason.join(', '));
   data.append("improvement", formData.improvement.join(', '));
