@@ -605,6 +605,14 @@ questionsContainer.addEventListener("click", (e) => {
           checkbox.checked = false;
         });
       });
+    checkboxes &&
+        checkboxes.forEach((radio) =>
+          radio.addEventListener("click", () => {
+            if (unselect) {
+              unselect.checked = false;
+            }
+          })
+        );
   }
 
   if (target.tagName != "BUTTON") return;
