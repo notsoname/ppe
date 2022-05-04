@@ -313,7 +313,7 @@ const questions = [
 ];
 const questionsContainer = document.querySelector(".survey-wrapper");
 const surveyContainer = document.querySelector(".section-survey")
-let questionNumber = 0;
+let questionNumber = 12;
 let surveyQuestionNumber = 0;
 
 function loadQuestions() {
@@ -538,6 +538,9 @@ function rules() {
       surveyQuestionNumber = 8
     }
   }
+  if (questionNumber == 13) {
+
+  }
   if (questionNumber == 14) {
     surveyQuestionNumber = 14
     postDataForm()
@@ -592,8 +595,25 @@ questionsContainer.addEventListener("click", (e) => {
   }
   const radios = document.querySelectorAll(".radio");
   const checkboxes = document.querySelectorAll(".checkbox");
+  const checkboxesChecked = document.querySelectorAll(".checkbox:checked");
   const unselect = document.querySelector(".unselect");
   if (target.tagName == "INPUT") {
+    if (questionNumber == 8 || questionNumber == 9) {
+      for(var j=0; j<checkboxes.length; j++)
+      if (checkboxesChecked.length >= 3) { // если отметить три и более галочки
+        checkboxes[j].disabled = true; // все чекбоксы становятся disabled
+        for(var i=0; i<checkboxesChecked.length; i++)
+        checkboxesChecked[i].disabled = false; // но disabled убирается с помеченных галочками чекбоксов
+      } else {
+        checkboxes[j].disabled = false; // если выделить менее трёх галочек, то disabled снимается со всех чекбоксов
+      }
+    } 
+    document.querySelector('.q20') && document.querySelector('.q20').addEventListener('change', () => {
+      checkboxes.forEach(c => c.checked = true)
+    })
+    document.querySelector('.q18') && document.querySelector('.q18').addEventListener('change', () => {
+      checkboxes[8].checked = true
+    })
     unselect &&
       unselect.addEventListener("click", () => {
         checkboxes.forEach((radio) =>
@@ -621,15 +641,21 @@ questionsContainer.addEventListener("click", (e) => {
     let count = 0;
     if (radios[i].checked) {
       if (radios[i].value == "Другое <input class='q18' placeholder='Впишите'>") {
-        if (document.querySelector('.q18').value == 0) {
+        if (document.querySelector('.q18').value.length == 0) {
           document.querySelector('.q18').style.borderBottom = "1px solid red";
           return;
         }
       }
       if (radios[i].value == "Запишите <input class='q20' placeholder='Впишите'>") {
-        if (document.querySelector('.q20').value == 0) {
+        if (document.querySelector('.q20').value.length == 0) {
           document.querySelector('.q20').style.borderBottom = "1px solid red";
           return;
+        }
+      }
+      if (questionNumber == 12) {
+        if (radios[7].checked && document.querySelector('.q18').value.length == 0) {
+          document.querySelector('.q18').style.borderBottom = "1px solid red";
+          return
         }
       }
       count++;
