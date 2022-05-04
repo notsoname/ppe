@@ -35,7 +35,12 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: [""]
+    omni: ["dontlikecamera", 
+      "dontlikeperformance", 
+      "probleminterface", 
+      "baddisplay", 
+      "phoneinteractions"
+    ]
   },
   {
     question: "Что именно вам не нравится в КАМЕРЕ?",
@@ -46,7 +51,6 @@ const questions = [
       "Фотографии затемнены",
       "Не нравится ночная съемка",
       "Непривычная цветопередача фотографий",
-      "Чтобы сделать нужный снимок, приходится много раз фотографировать",
       "Не знаю как включить стабилизацию видео",
       "Не знаю как использовать функции для монтажа видео",
       "Ничего из перечисленного"
@@ -56,7 +60,15 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["fuzzyphoto",
+        "colorphoto",
+        "toomuchlight",
+        "badnightcam",
+        "colorreproduction",
+        "dontknowturnoffstabilization",
+        "dontknowmountingfunc",
+        "nothing"
+    ]
   },
   {
     question:
@@ -73,7 +85,12 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["freezeapllicationopen",
+      "freezewhileworking",
+      "autoreboot",
+      "freezegameorvideo",
+      "nothing"
+    ]
   },
   {
     question:
@@ -94,7 +111,15 @@ const questions = [
     ratings: [],
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: []
+    omni: ["difficultFindWhatIsWhere",
+      "unusualButtonLayout",
+      "dontknowWhereSaveFiles",
+      "dontlikeDesignIcon",
+      "dontknowHowToSettingPhone",
+      "donknowHowToUseDoubleScreen",
+      "uncomfortableUseLighScreen",
+      "nothing"
+    ]
   },
   {
     question:
@@ -112,6 +137,11 @@ const questions = [
     classwrapper: "form-control",
     ratings: [],
     omni: [
+      "qualityoPictures",
+      "toomauchLight",
+      "cantUsePhoenOneHand",
+      "notLightScreen",
+      "nothing"
     ]
   },
   {
@@ -132,7 +162,16 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: [],
+    omni: [
+      "notmanyMemory",
+      "dontknowChild",
+      "dontknowSecureData",
+      "distractingNotifications",
+      "uncomftableUsePhoneWork",
+      "fearToLoss",
+      "fastDischarged",
+      "nothing"
+    ],
   },
   {
     question:
@@ -162,7 +201,8 @@ const questions = [
           "comfortableHold", 
           "sound",
           "brand",
-          "abilityFoldPhone"
+          "interface",
+          "screen"
         ]
   },
   {
@@ -183,13 +223,16 @@ const questions = [
     type: "checkbox",
     class: "radio checkbox",
     classwrapper: "form-control",
-    omni: ["Battery",
-      "screen",
-      "appearance",
-      "CPU",
-      "audioSystem",
+    omni: [
+      "camera",
+      "battery",
+      "perfomance",
       "memory",
-      "camera" 
+      "design",
+      "audio",
+      "interface",
+      "screen",
+      "nothing"
     ]
   },
   {
