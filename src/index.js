@@ -600,7 +600,7 @@ questionsContainer.addEventListener("click", (e) => {
   if (target.tagName == "INPUT") {
     if (questionNumber == 8 || questionNumber == 9) {
       for(var j=0; j<checkboxes.length; j++)
-      if (checkboxesChecked.length >= 3) { // если отметить три и более галочки
+      if (checkboxesChecked.length > 3) { // если отметить три и более галочки
         checkboxes[j].disabled = true; // все чекбоксы становятся disabled
         for(var i=0; i<checkboxesChecked.length; i++)
         checkboxesChecked[i].disabled = false; // но disabled убирается с помеченных галочками чекбоксов
@@ -692,7 +692,7 @@ const isValidEmail = email => {
   return re.test(String(email).toLowerCase());
 }
 const isValidName = name => {
-  const re = /^[a-zA-Z ]{2,30}$/;
+  const re = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
   return re.test(String(name).toLowerCase());
 }
 const isValidPhone = phone => {
